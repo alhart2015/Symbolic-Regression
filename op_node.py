@@ -35,14 +35,12 @@ class OpNode():
 
     def eval_helper(self, node):
         '''Recursive helper to evaluate the subtree rooted at the node'''
-        if not self.func:
-            return self.value
+        if not node.func:
+            return node.value
 
-        print self.functions[self.operator]
-
-        left = self.eval_helper(self.left)
-        right = self.eval_helper(self.right)
-        self.value = self.func(left, right)
+        left = node.eval_helper(node.left)
+        right = node.eval_helper(node.right)
+        node.value = node.func(left, right)
 
 
     def add(self, l, r):
