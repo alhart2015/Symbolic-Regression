@@ -52,12 +52,43 @@ def main():
 
     n = OpNode("+", 0)
     t = SymbolTree(n)
-    # t.root.left = OpNode("-", 0)
-    # t.root.left.left = OpNode("", 2)
-    # t.root.left.right = OpNode("", 1)
-    t.root.left = OpNode("", 3)
-    t.root.right = OpNode("", 4)
-    print t.eval()
+    t.root.left = OpNode("", -1)
+    t.root.left.depth = 2
+    t.root.right = OpNode("*", 0)
+    t.root.right.depth = 2
+    t.root.right.left = OpNode("*", 0)
+    t.root.right.left.depth = 3
+    t.root.right.right = OpNode("", -3)
+    t.root.right.right.depth = 3
+    t.root.right.left.left = OpNode("", -3)
+    t.root.right.left.left.depth = 4
+    t.root.right.left.right = OpNode("", -3)
+    t.root.right.left.right.depth = 4
+    # t.root.left = OpNode("", 4)
+    #t.root.right = OpNode("", 4)
+    m = OpNode("/", 0)
+    s = SymbolTree(m)
+    s.root.left = OpNode("", -2)
+    s.root.left.depth = 2
+    s.root.right = OpNode("", 2)
+    s.root.right.depth = 2
+    
+    print "p1"
+    t.to_string()
+    print "p2"
+    s.to_string()
+    t.crossover(s)
+    #t.fix_depth(t.root, 1)
+    #s.fix_depth(s.root, 1)
+    print "c1"
+    t.to_string()
+    print "c2"
+    s.to_string()
+
+    print 
+    #t.test_tree()
+    print 
+    #s.test_tree()
 
     # a = OpNode("", 3)
     # print a.func, a.value
