@@ -38,6 +38,7 @@ def evaluate_function(x, tree):
 	Returns an array of y values 
 	"""
 	y = []
+	# print tree
 	for val in x:
 		y.append(tree.eval(val))
 
@@ -77,7 +78,7 @@ def all_scores(error_sum, population):
 	new_sum = 0
 
 	for t in population:
-		t.score = error_sum - t.error
+		t.score = float(error_sum - t.error)
 		new_sum += t.score
 
 	return new_sum
@@ -93,7 +94,7 @@ def next_gen(pop, total, operations, terminals):
 	new_gen = []
 
 	for i in range(int(math.ceil(len(pop)*REPRODUCTION_RATE))):
-		print 'spencer'
+		# print 'spencer'
 		new_gen.append(pop[i])
 		pop[i].to_string()
 
@@ -109,7 +110,11 @@ def next_gen(pop, total, operations, terminals):
 			# print 'alden'
 			p2 = select_individual(pop, total)
 
-		new_gen.append(deepcopy(pop[p1]).crossover(deepcopy(pop[p2])))
+		copy1 = deepcopy(pop[p1])
+		copy2 = deepcopy(pop[p2])
+		copy1.crossover(copy2)
+		new_gen.append(copy1)
+		# new_gen.append(deepcopy(pop[p1]).crossover(deepcopy(pop[p2])))
 
 	return new_gen
 
@@ -147,6 +152,7 @@ def make_terminals(begin, end):
 	while (at <= end):
 		t.append(at)
 		at += 1
+		t.append('x')
 	return t
 
 def init_pop(size):
@@ -158,9 +164,9 @@ def init_pop(size):
 	cutoff = .5
 	depth_limit = 2
 	pop = []
-	print terminals
-	print operations
-	print
+	# print terminals
+	# print operations
+	# print
 
 	for i in range(size):
 		op = operations[random.randint(0,len(operations)-1)]
@@ -168,7 +174,7 @@ def init_pop(size):
 		t = SymbolTree(n)
 		add_children(cutoff, depth_limit, 1, terminals, operations, t.root)
 		pop.append(t)
-		print
+		# print
 
 	return pop
 
@@ -181,8 +187,8 @@ def add_children(cutoff, depth_limit, at, terminals, operations, node):
 	check_left = random.random()
 	check_right = random.random()
 
-	print "Depth: " + str(at)
-	print "cutoff: " + str(cutoff) + " check left: " + str(check_left) + " check right" + str(check_right)
+	# print "Depth: " + str(at)
+	# print "cutoff: " + str(cutoff) + " check left: " + str(check_left) + " check right" + str(check_right)
 
 	if check_left < cutoff or at > depth_limit:
 		r = random.randint(0, len(terminals)-1)
@@ -219,10 +225,11 @@ def test():
 		print "GENERATION:", i
 		error_sum = total_error(population, x_data, y_data)
 		sum_scores = all_scores(error_sum, population)
-		# for t in population:
-		# 	t.to_string()
-		# 	print t.score
-		# 	print
+		print "population:"
+		for t in population:
+			t.to_string()
+			print t.error, t.score, t.eval(1), t.eval(2), t.eval(3)
+			print
 		population = next_gen(population, sum_scores, operations, terminals)
 
 

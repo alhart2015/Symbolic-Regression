@@ -55,22 +55,22 @@ class SymbolTree():
     def mutate(self, node, potential, current, rate, operations, terminals):
 
         if (current < potential) and node:
-            print "valid mutation node"
+            # print "valid mutation node"
             r = random()
             if r < rate:
-                print "within the rate, " + str(rate)
+                # print "within the rate, " + str(rate)
                 if node.operator == "":
-                    print "mutating value node"
+                    # print "mutating value node"
                     past = node.value
                     while node.value == past:
                         node.value = terminals[randint(0, len(terminals)-1)]
-                    print "old: " + str(past) + " new: " + str(node.value)
+                    # print "old: " + str(past) + " new: " + str(node.value)
                 else:
-                    print "mutating operator node"
+                    # print "mutating operator node"
                     past = node.operator
                     while node.operator == past:
                         node.operator = operations[randint(0, len(operations)-1)]
-                    print "old: " + str(past) + " new: " + str(node.operator)
+                    # print "old: " + str(past) + " new: " + str(node.operator)
                 current += 1
             nxt = random()
             if nxt < .5:
@@ -208,7 +208,7 @@ class SymbolTree():
             elif node.operator == "^":
                 exp = self.eval_helper(node.right, xVal)
                 exp = int(abs(exp))
-                print self.eval_helper(node.left, xVal), exp
+                # print self.eval_helper(node.left, xVal), exp
                 node.value = self.eval_helper(node.left, xVal) ** exp
                 return node.value
             else:
@@ -221,14 +221,14 @@ class SymbolTree():
                 return node.value
 
     def test_tree_help(self, node, lvl):
-        print "node: " + node.operator + " " + str(node.value) + " level: " + str(lvl)
-        if node.left:
-            print "left child: " + node.left.operator + " " + str(node.left.value)
-            print "thinks its at depth: " + str(node.left.depth) 
-        if node.right:
-            print "right child: " + node.right.operator + " " + str(node.right.value)
-            print "thinks its at depth: " + str(node.right.depth)
-        print
+        # print "node: " + node.operator + " " + str(node.value) + " level: " + str(lvl)
+        #if node.left:
+            # print "left child: " + node.left.operator + " " + str(node.left.value)
+            # print "thinks its at depth: " + str(node.left.depth) 
+        #if node.right:
+            # print "right child: " + node.right.operator + " " + str(node.right.value)
+            # print "thinks its at depth: " + str(node.right.depth)
+        # print
 
         if node.left:
             self.test_tree_help(node.left, lvl+1)
