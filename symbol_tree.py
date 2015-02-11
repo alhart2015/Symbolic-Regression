@@ -205,6 +205,12 @@ class SymbolTree():
                 node.value = self.eval_helper(node.left, xVal) *\
                  self.eval_helper(node.right, xVal)
                 return node.value
+            elif node.operator == "^":
+                exp = self.eval_helper(node.right, xVal)
+                exp = int(abs(exp))
+                print self.eval_helper(node.left, xVal), exp
+                node.value = self.eval_helper(node.left, xVal) ** exp
+                return node.value
             else:
                 right = self.eval_helper(node.right, xVal)
                 if right != 0:

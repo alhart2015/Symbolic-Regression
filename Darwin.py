@@ -4,6 +4,7 @@ import math
 from symbol_tree import SymbolTree
 import random
 from op_node import OpNode
+from copy import deepcopy
 
 def getData(filename):
 	""" Retrives data from a text filename
@@ -57,26 +58,27 @@ def square_error_selection(yData, yTree, tree):
 	tree.error = error
 	return error
 
-def total_error(errors, population, x_data, y_data):
+def total_error(population, x_data, y_data):
 	'''Calculates the mean squared error of every tree in the population
 
 	Returns: the sum of all errors
 	'''
 	i = 0
+	total = 0
 	for t in population:
-		errors[i] = square_error_selection(y_data, evaluate_function(x_data, t), t)
-	return sum(errors)
+		total += square_error_selection(y_data, evaluate_function(x_data, t), t)
+	return total
 
-def all_scores(errors, error_sum, population):
+def all_scores(error_sum, population):
 	'''Calculates the score based on the squared error of each tree
 
 	Returns: the new sum of all the scores
 	'''
 	new_sum = 0
 
-	for i in xrange(len(population)):
-		population[i].score = error_sum - errors[i]
-		new_sum += error_sum - errors[i]
+	for t in population:
+		t.score = error_sum - t.error
+		new_sum += t.score
 
 	return new_sum
 
@@ -107,7 +109,7 @@ def next_gen(pop, total, operations, terminals):
 			# print 'alden'
 			p2 = select_individual(pop, total)
 
-		new_gen.append(pop[p1].crossover(pop[p2]))
+		new_gen.append(deepcopy(pop[p1]).crossover(deepcopy(pop[p2])))
 
 	return new_gen
 
@@ -115,9 +117,15 @@ def select_individual(pop, total):
 	r = random.random()
 	at = -1
 	acum = 0
-	while r < (pop[at].score+acum)/total:
+	i = 0
+	while r > (pop[at].score/total) + acum:
+		print i
+		i += 1
+		print "in select_individual:", at, r, acum, pop[at].score/total
+		acum += pop[at].score/total
 		at -= 1
-		acum += (pop[at].score+acum)/total
+
+		
 	return at
 
 #################################################################
@@ -146,7 +154,7 @@ def init_pop(size):
 	size to be used as the first generation of genetic programming
 	"""
 	terminals = make_terminals(-3,3)
-	operations = ['+', '-', '*', '/']
+	operations = ['+', '-', '*', '/', '^']
 	cutoff = .5
 	depth_limit = 2
 	pop = []
@@ -199,6 +207,23 @@ def add_children(cutoff, depth_limit, at, terminals, operations, node):
 		node.right = right
 		right.depth = at+1
 		add_children(cutoff, depth_limit, at+1, terminals, operations, right)
+def test():
+	terminals = make_terminals(-3, 3)
+	operations = ['+', '-', '*', '/', '^']
+	x_data = [1, 2, 3]
+	y_data = [2, 0, -2]
+	gen_size = 3
+	num_generations = 3
+	population = init_pop(gen_size)
+	for i in xrange(num_generations):
+		print "GENERATION:", i
+		error_sum = total_error(population, x_data, y_data)
+		sum_scores = all_scores(error_sum, population)
+		# for t in population:
+		# 	t.to_string()
+		# 	print t.score
+		# 	print
+		population = next_gen(population, sum_scores, operations, terminals)
 
 
 #############################################################
@@ -208,31 +233,35 @@ The main function is for testing purposes only
 def main():
 	""" Controls the flow of the selection process
 	"""
-	terminals = make_terminals(-3,3)
-	operations = ['+', '-', '*', '/']
-	#xPts, yPts = getData("test.txt")
+	# terminals = make_terminals(-3,3)
+	# operations = ['+', '-', '*', '/', '^']
+	# #xPts, yPts = getData("test.txt")
 
-	xData = [1, 2, 3]
-	yData = [2, 0, -2]
-	gen_size = 3
+	# xData = [1, 2, 3]
+	# yData = [2, 0, -2]
+	# gen_size = 3
 
-	pop = init_pop(gen_size)
-	total = 0
+	# pop = init_pop(gen_size)
+	# total = 0
 
-	print "gen 0"
-	for p in pop:
-		#p.to_string()
-		total += square_error_selection(yData, evaluate_function(xData, p), p)
-		print p.error
-	print total
-	pop.sort(key=lambda p: p.error)
-	print 'sorted'
-	pop = next_gen(pop, total, operations, terminals)
+	# print "gen 0"
+	# for p in pop:
+	# 	#p.to_string()
+	# 	total += square_error_selection(yData, evaluate_function(xData, p), p)
+	# 	print p.error
+	# print total
+	# pop.sort(key=lambda p: p.error)
+	# print 'sorted'
+	# for t in pop:
+	# 	t.to_string()
+	# 	print t.score, t.error
+	# pop = next_gen(pop, total, operations, terminals)
 
-	print 
-	print "gen 1"
-	for p in pop:
-		p.to_string()
+	# print 
+	# print "gen 1"
+	# for p in pop:
+	# 	p.to_string()
+	test()
 
 
 
