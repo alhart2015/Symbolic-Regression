@@ -16,15 +16,16 @@ def getData(filename):
 	
 	infile = open(filename, "r")
 	data = infile.readlines()
-
+	infile.close()
 	for line in data:
 		vals = line.split(" ")
+		# print vals
 		# I noticed there were 4 columns, i'm not sure which column corresponds
 		# to which data point x or y
-		x.append(int(vals[0]))
-		x.append(int(vals[1]))
-		y.append(int(vals[2]))
-		y.append(int(vals[3]))
+		x.append(float(vals[0]))
+		y.append(float(vals[1]))
+		# y.append(int(vals[2]))
+		# y.append(int(vals[3]))
 
 	return x, y
 
@@ -55,7 +56,8 @@ def square_error_selection(yData, yTree, tree):
 	# other points can end up with a score of 0 just like a curve that matches
 	error = 0
 	for i in range(len(yData)):
-		error += pow(yData[i] - yTree[i], 2)
+		# error += pow(yData[i] - yTree[i], 2)
+		error += abs(yData[i] - yTree[i])
 	tree.error = error
 	return error
 
@@ -96,7 +98,7 @@ def next_gen(pop, total, operations, terminals):
 	for i in range(int(math.ceil(len(pop)*REPRODUCTION_RATE))):
 		# print 'spencer'
 		new_gen.append(pop[i])
-		pop[i].to_string()
+		# pop[i].to_string()
 
 	for i in range(int(math.ceil(len(pop)*MUTATION_RATE))):
 		t = random.choice(pop)
@@ -124,9 +126,9 @@ def select_individual(pop, total):
 	acum = 0
 	i = 0
 	while r > (pop[at].score/total) + acum:
-		print i
-		i += 1
-		print "in select_individual:", at, r, acum, pop[at].score/total
+		# print i
+		# i += 1
+		# print "in select_individual:", at, r, acum, pop[at].score/total
 		acum += pop[at].score/total
 		at -= 1
 
@@ -196,15 +198,27 @@ def add_children(cutoff, depth_limit, at, terminals, operations, node):
 		left.depth = at+1
 		node.left = left
 	else:
-		r = random.randint(0, len(operations)-1)
-		left = OpNode(operations[r], 0)
+		if node.operator == "^":
+			op = random.choice(operations)
+			while op == "^":
+				op = random.choice(operations)
+			left = OpNode(op, 0)
+		else:
+			r = random.randint(0, len(operations)-1)
+			left = OpNode(operations[r], 0)
 		node.left = left
 		left.depth = at+1
 		add_children(cutoff, depth_limit, at+1, terminals, operations, left)
 
-	if check_right < cutoff or at > depth_limit:
-		r = random.randint(0, len(terminals)-1)
-		right = OpNode("", terminals[r])
+	if check_right < cutoff or at > depth_limit or node.operator == "^":
+		if node.operator == "^":
+			term = random.choice(terminals)
+			while term == "x":
+				term = random.choice(terminals)
+			right = OpNode("", term)
+		else:
+			r = random.randint(0, len(terminals)-1)
+			right = OpNode("", terminals[r])
 		node.right = right
 		right.depth = at+1
 	else:
@@ -213,24 +227,51 @@ def add_children(cutoff, depth_limit, at, terminals, operations, node):
 		node.right = right
 		right.depth = at+1
 		add_children(cutoff, depth_limit, at+1, terminals, operations, right)
+
 def test():
-	terminals = make_terminals(-3, 3)
-	operations = ['+', '-', '*', '/', '^']
-	x_data = [1, 2, 3]
-	y_data = [2, 0, -2]
-	gen_size = 3
-	num_generations = 3
+	x_vals, y_vals = getData("test_data.txt")
+	# print len(x_vals)
+	# print len(y_vals)
+	# print x_vals[0]
+	# print y_vals[0]
+
+	terminals = make_terminals(-10, 10)
+	operations = ['+', '-', '*', '/']
+	gen_size = 100
+	num_generations = 10
 	population = init_pop(gen_size)
 	for i in xrange(num_generations):
 		print "GENERATION:", i
-		error_sum = total_error(population, x_data, y_data)
-		sum_scores = all_scores(error_sum, population)
 		print "population:"
-		for t in population:
-			t.to_string()
-			print t.error, t.score, t.eval(1), t.eval(2), t.eval(3)
-			print
+		# for t in population:
+		# 	t.to_string()
+		# 	# print t.error, t.score, t.eval(1), t.eval(2), t.eval(3)
+		# 	# print
+		error_sum = total_error(population, x_vals, y_vals)
+		sum_scores = all_scores(error_sum, population)
+		population.sort(key=lambda x: x.score)
 		population = next_gen(population, sum_scores, operations, terminals)
+	population.sort(key=lambda x: x.score)
+	print population[-1]
+
+	# terminals = make_terminals(-3, 3)
+	# operations = ['+', '-', '*', '/', '^']
+	# x_data = [1, 2, 3]
+	# y_data = [2, 0, -2]
+	# gen_size = 3
+	# num_generations = 3
+	# population = init_pop(gen_size)
+	# for i in xrange(num_generations):
+	# 	print "GENERATION:", i
+	# 	error_sum = total_error(population, x_data, y_data)
+	# 	sum_scores = all_scores(error_sum, population)
+	# 	print "population:"
+	# 	for t in population:
+	# 		t.to_string()
+	# 		print t.error, t.score, t.eval(1), t.eval(2), t.eval(3)
+	# 		print
+	# 	population = next_gen(population, sum_scores, operations, terminals)
+
 
 
 #############################################################

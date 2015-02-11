@@ -169,6 +169,7 @@ class SymbolTree():
 
         Returns: the value of the subtree rooted at this node
         '''
+        self.to_string()
         return self.eval_helper(self.root, xVal)
 
     def eval_helper(self, node, xVal):
