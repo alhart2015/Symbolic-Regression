@@ -51,11 +51,35 @@ def square_error_selection(yData, yTree, tree):
 	# one obvious potential downfall of this method is curves that are 
 	# above the actual data at some points and below the actual data at
 	# other points can end up with a score of 0 just like a curve that matches
-	score = 0
+	error = 0
 	for i in range(len(yData)):
-		score += pow(yData[i] - yTree[i], 2)
-	tree.score = score
-	return score
+		error += pow(yData[i] - yTree[i], 2)
+	tree.error = error
+	return error
+
+def total_error(errors, population, x_data, y_data):
+	'''Calculates the mean squared error of every tree in the population
+
+	Returns: the sum of all errors
+	'''
+	i = 0
+	for t in population:
+		errors[i] = square_error_selection(y_data, evaluate_function(x_data, t), t)
+	return sum(errors)
+
+def all_scores(errors, error_sum, population):
+	'''Calculates the score based on the squared error of each tree
+
+	Returns: the new sum of all the scores
+	'''
+	new_sum = 0
+
+	for i in xrange(len(population)):
+		population[i].score = error_sum - errors[i]
+		new_sum += error_sum - errors[i]
+
+	return new_sum
+
 
 #################################################################
 """ generate the succeeding generation """
@@ -66,32 +90,34 @@ def next_gen(pop, total, operations, terminals):
 
 	new_gen = []
 
-	for i in range(int(math.floor(len(pop)*REPRODUCTION_RATE))):
+	for i in range(int(math.ceil(len(pop)*REPRODUCTION_RATE))):
+		print 'spencer'
 		new_gen.append(pop[i])
+		pop[i].to_string()
 
-	for i in range(int(math.floor(len(pop)*MUTATION_RATE))):
-		m = len(pop)*random.random()
-		pop[m].mutate(pop[m].root, 1, 0, .5, operations, terminals)
+	for i in range(int(math.ceil(len(pop)*MUTATION_RATE))):
+		t = random.choice(pop)
+		t.mutate(t.root, 1, 0, .5, operations, terminals)
 
 	while len(new_gen) < len(pop):
 		p1 = select_individual(pop, total)
 		p2 = select_individual(pop, total)
 
 		while p2 == p1:
+			# print 'alden'
 			p2 = select_individual(pop, total)
 
 		new_gen.append(pop[p1].crossover(pop[p2]))
 
 	return new_gen
-		 
 
 def select_individual(pop, total):
 	r = random.random()
-	at = 0
+	at = -1
 	acum = 0
-	while (r < ((total-(pop[at].score+acum))/total)) and at < len(pop)-1:
-		at += 1
-		acum += (total-(pop[at].score+acum))/total
+	while r < (pop[at].score+acum)/total:
+		at -= 1
+		acum += (pop[at].score+acum)/total
 	return at
 
 #################################################################
@@ -197,9 +223,10 @@ def main():
 	for p in pop:
 		#p.to_string()
 		total += square_error_selection(yData, evaluate_function(xData, p), p)
-		print p.score
+		print p.error
 	print total
-	pop.sort(key=lambda p: p.score)
+	pop.sort(key=lambda p: p.error)
+	print 'sorted'
 	pop = next_gen(pop, total, operations, terminals)
 
 	print 

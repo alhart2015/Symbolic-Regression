@@ -4,17 +4,19 @@ Authors: Spencer Chadinha and Alden Hart
 2/2/2015
 '''
 
-from random import random
-from random import randint
+from random import random, randint
+# from random import randint
 
 class SymbolTree():
     """Class to represent a symbol tree."""
     def __init__(self, root):
         self.root = root
+        self.score = 0      # Fitness score != squared error
+        self.error = 0      # Squared error from the actual
 
 
-    def add_node(self, node):
-        pass
+    # def add_node(self, node):
+    #     pass
 
     def to_string(self):
         """
@@ -70,8 +72,8 @@ class SymbolTree():
                         node.operator = operations[randint(0, len(operations)-1)]
                     print "old: " + str(past) + " new: " + str(node.operator)
                 current += 1
-            next = random()
-            if next < .5:
+            nxt = random()
+            if nxt < .5:
                 self.mutate(node.left, potential, current, rate, operations, terminals)
             else:
                 self.mutate(node.right, potential, current, rate, operations, terminals)
@@ -91,10 +93,10 @@ class SymbolTree():
             if r < chance or self_node.operator == "":
                 self_selection = self_node
             else:
-                next = random()
+                nxt = random()
                 chance += .2
                 self_parent = self_node
-                if next < .5:
+                if nxt < .5:
                     self_left = True
                     self_node = self_node.left
                 else:
@@ -113,10 +115,10 @@ class SymbolTree():
             if r < chance or other_node.operator == "":
                 other_selection = other_node
             else:
-                next = random()
+                nxt = random()
                 chance += .2
                 other_parent = other_node
-                if next < .5:
+                if nxt < .5:
                     other_left = True
                     other_node = other_node.left
                 else:
@@ -230,25 +232,25 @@ class SymbolTree():
     def test_tree(self):
         self.test_tree_help(self.root, 1)
 
-    def add(self, l, r):
-        '''Performs addition when the operator is +'''
-        return l + r
+    # def add(self, l, r):
+    #     '''Performs addition when the operator is +'''
+    #     return l + r
 
-    def subtract(self, l, r):
-        '''Performs subtraction when the operator is -'''
-        return l - r
+    # def subtract(self, l, r):
+    #     '''Performs subtraction when the operator is -'''
+    #     return l - r
 
-    def multiply(self, l, r):
-        '''Performs multiplication when the operator is x'''
-        return l * r
+    # def multiply(self, l, r):
+    #     '''Performs multiplication when the operator is x'''
+    #     return l * r
 
-    def divide(self, l, r):
-        '''Performs division when the operator is /'''
-        if float(r) != 0:
-            return l / float(r)
-        else:
-            return 1
+    # def divide(self, l, r):
+    #     '''Performs division when the operator is /'''
+    #     if float(r) != 0:
+    #         return l / float(r)
+    #     else:
+    #         return 1
 
-    def power(self, l, r):
-        '''Performs exponentation when the operator is ^'''
-        return l ** r
+    # def power(self, l, r):
+    #     '''Performs exponentation when the operator is ^'''
+    #     return l ** r
