@@ -27,6 +27,8 @@ def getData(filename):
 
 	return x, y
 
+#####################################################################
+""" functions that evaluate trees """
 
 def evaluate_function(x, tree):
 	""" This method evaluates the SymbolTree function for every
@@ -40,9 +42,9 @@ def evaluate_function(x, tree):
 
 	return y
 
-def y_difference_selection(yData, yTree):
-	""" This method generates a selection score based on the difference between
-	y values at each x value.
+def square_error_selection(yData, yTree, tree):
+	""" This method generates a selection score based on the square 
+	difference between y values at each x value.
 
 	Returns: a selection score for the evaluate_function
 	"""
@@ -51,9 +53,46 @@ def y_difference_selection(yData, yTree):
 	# other points can end up with a score of 0 just like a curve that matches
 	score = 0
 	for i in range(len(yData)):
-		score += yData[i] - yTree[i]
-
+		score += pow(yData[i] - yTree[i], 2)
+	tree.score = score
 	return score
+
+#################################################################
+""" generate the succeeding generation """
+
+def next_gen(pop, total, operations, terminals):
+	REPRODUCTION_RATE = .1
+	MUTATION_RATE = .1
+
+	new_gen = []
+
+	for i in range(int(math.floor(len(pop)*REPRODUCTION_RATE))):
+		new_gen.append(pop[i])
+
+	for i in range(int(math.floor(len(pop)*MUTATION_RATE))):
+		m = len(pop)*random.random()
+		pop[m].mutate(pop[m].root, 1, 0, .5, operations, terminals)
+
+	while len(new_gen) < len(pop):
+		p1 = select_individual(pop, total)
+		p2 = select_individual(pop, total)
+
+		while p2 == p1:
+			p2 = select_individual(pop, total)
+
+		new_gen.append(pop[p1].crossover(pop[p2]))
+
+	return new_gen
+		 
+
+def select_individual(pop, total):
+	r = random.random()
+	at = 0
+	acum = 0
+	while (r < ((total-(pop[at].score+acum))/total)) and at < len(pop)-1:
+		at += 1
+		acum += (total-(pop[at].score+acum))/total
+	return at
 
 #################################################################
 	"""
@@ -146,20 +185,33 @@ def main():
 	terminals = make_terminals(-3,3)
 	operations = ['+', '-', '*', '/']
 	#xPts, yPts = getData("test.txt")
-	test = init_pop(2)
-	print "parent 1"
-	test[0].to_string()
-	print test[0].eval(2)
-	print "parent 2"
-	test[1].to_string()
-	print test[1].eval(2)
-	test[0].crossover(test[1])
-	print "cross 1"
-	test[0].to_string()
-	print test[0].eval(2)
-	print "cross 2"
-	test[1].to_string()
-	print test[1].eval(2)
+
+	xData = [1, 2, 3]
+	yData = [2, 0, -2]
+	gen_size = 3
+
+	pop = init_pop(gen_size)
+	total = 0
+
+	print "gen 0"
+	for p in pop:
+		#p.to_string()
+		total += square_error_selection(yData, evaluate_function(xData, p), p)
+		print p.score
+	print total
+	pop.sort(key=lambda p: p.score)
+	pop = next_gen(pop, total, operations, terminals)
+
+	print 
+	print "gen 1"
+	for p in pop:
+		p.to_string()
+
+
+
+		
+
+
 
 
 main()
