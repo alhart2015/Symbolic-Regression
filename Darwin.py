@@ -102,7 +102,8 @@ def next_gen(pop, total, operations, terminals):
 
 	for i in range(int(math.ceil(len(pop)*MUTATION_RATE))):
 		t = random.choice(pop)
-		t.mutate(t.root, 1, 0, .5, operations, terminals)
+		#t.mutate(t.root, 1, 0, .5, operations, terminals)
+		t.mutate2(t.root, .25, operations, terminals)
 
 	while len(new_gen) < len(pop):
 		p1 = select_individual(pop, total)
@@ -164,7 +165,7 @@ def init_pop(size):
 	terminals = make_terminals(-5,5)
 	operations = ['+', '-', '*', '/']
 	cutoff = .5
-	depth_limit = 7
+	depth_limit = 1
 	pop = []
 	# print terminals
 	# print operations
@@ -246,20 +247,40 @@ def same_help(n1, n2):
 			return same_help(n1.left, n2.left) and same_help(n1.right, n2.right)
 	return False
 
-		
+def compare_all(pop):
+	comp = []
+	unique = []
+	is_unique = True
+	count = 0
+	for i in range(len(pop)):
+		print "Starting comparisons for:"
+		pop[i].to_string()
+		print "Compares:"
+		for p in unique:
+			p.to_string()
+			if is_same(pop[i], p):
+				print "                                      same"
+				is_unique = False
+			print is_unique
+		comp.append(pop[i])
+		if is_unique:
+			unique.append(pop[i])
+		is_unique = True
+		print
+		print
+
+	print "count:", len(unique)
+
+	return float(len(unique))/len(pop)
 
 def test():
-	#x_vals, y_vals = getData("test_data.txt")
-	x_vals = [1,2,3]
-	y_vals = [2,0,-2]
-	# print len(x_vals)
-	# print len(y_vals)
-	# print x_vals[0]
-	# print y_vals[0]
+	x_vals, y_vals = getData("test_data.txt")
+	#x_vals = [1,2,3]
+	#y_vals = [2,0,-2]
 
 	terminals = make_terminals(-10, 10)
 	operations = ['+', '-', '*', '/']
-	gen_size = 100
+	gen_size = 20
 	num_generations = 1
 	population = init_pop(gen_size)
 	for i in xrange(num_generations):
@@ -273,20 +294,17 @@ def test():
 		sum_scores = all_scores(error_sum, population)
 		population.sort(key=lambda x: x.score)
 		print count_score(population)
-		if population[-1].error <=.5:
+		if population[-1].error <=.2:
 			break
 		population = next_gen(population, sum_scores, operations, terminals)
 
+		x = compare_all(population) 
+		print "diversity by equality:", x
+		print "diversity by score:", count_score(population)
+
+	print "We found a winner!"
 	population[-1].to_string()
-	acumul = 0
-	for p in population:
-		p.to_string()
-		if not is_same(p, population[-1]):
-			print "False"
-			acumul += 1
-		else:
-			print "True"
-	print acumul
+	print "error:", population[-1].error, " score:", population[-1].score
 
 """
 	population.sort(key=lambda x: x.score)
@@ -317,47 +335,5 @@ def test():
 
 
 #############################################################
-"""
-The main function is for testing purposes only
-"""
-def main():
-	""" Controls the flow of the selection process
-	"""
-	# terminals = make_terminals(-3,3)
-	# operations = ['+', '-', '*', '/', '^']
-	# #xPts, yPts = getData("test.txt")
+test()
 
-	# xData = [1, 2, 3]
-	# yData = [2, 0, -2]
-	# gen_size = 3
-
-	# pop = init_pop(gen_size)
-	# total = 0
-
-	# print "gen 0"
-	# for p in pop:
-	# 	#p.to_string()
-	# 	total += square_error_selection(yData, evaluate_function(xData, p), p)
-	# 	print p.error
-	# print total
-	# pop.sort(key=lambda p: p.error)
-	# print 'sorted'
-	# for t in pop:
-	# 	t.to_string()
-	# 	print t.score, t.error
-	# pop = next_gen(pop, total, operations, terminals)
-
-	# print 
-	# print "gen 1"
-	# for p in pop:
-	# 	p.to_string()
-	test()
-
-
-
-		
-
-
-
-
-main()
