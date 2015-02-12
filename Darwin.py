@@ -57,7 +57,7 @@ def square_error_selection(yData, yTree, tree):
 	error = 0
 	for i in range(len(yData)):
 		# error += pow(yData[i] - yTree[i], 2)
-		error += abs(yData[i] - yTree[i])
+		error += abs(float(yData[i]) - yTree[i])
 	tree.error = error
 	return error
 
@@ -80,7 +80,7 @@ def all_scores(error_sum, population):
 	new_sum = 0
 
 	for t in population:
-		t.score = float(error_sum - t.error)
+		t.score = 1./(1.+t.error)#float(error_sum - t.error)
 		new_sum += t.score
 
 	return new_sum
@@ -161,10 +161,10 @@ def init_pop(size):
 	""" This function generates a list of symbol trees of a user defined
 	size to be used as the first generation of genetic programming
 	"""
-	terminals = make_terminals(-3,3)
-	operations = ['+', '-', '*', '/', '^']
+	terminals = make_terminals(-5,5)
+	operations = ['+', '-', '*', '/']
 	cutoff = .5
-	depth_limit = 2
+	depth_limit = 7
 	pop = []
 	# print terminals
 	# print operations
@@ -228,8 +228,30 @@ def add_children(cutoff, depth_limit, at, terminals, operations, node):
 		right.depth = at+1
 		add_children(cutoff, depth_limit, at+1, terminals, operations, right)
 
+def count_score(pop):
+	scores = []
+	for p in pop:
+		if p.score not in scores:
+			scores.append(p.score)
+	return float(len(scores))/len(pop)
+
+def is_same(tree1, tree2):
+	return same_help(tree1.root, tree2.root)
+
+def same_help(n1, n2):
+	if n1 and n2 and n1.operator == n2.operator and n1.value == n2.value:
+		if not n1.left and not n1.right and not n2.left and not n2.right:
+			return True
+		else:
+			return same_help(n1.left, n2.left) and same_help(n1.right, n2.right)
+	return False
+
+		
+
 def test():
-	x_vals, y_vals = getData("test_data.txt")
+	#x_vals, y_vals = getData("test_data.txt")
+	x_vals = [1,2,3]
+	y_vals = [2,0,-2]
 	# print len(x_vals)
 	# print len(y_vals)
 	# print x_vals[0]
@@ -238,11 +260,11 @@ def test():
 	terminals = make_terminals(-10, 10)
 	operations = ['+', '-', '*', '/']
 	gen_size = 100
-	num_generations = 10
+	num_generations = 1
 	population = init_pop(gen_size)
 	for i in xrange(num_generations):
 		print "GENERATION:", i
-		print "population:"
+		#print "population:"
 		# for t in population:
 		# 	t.to_string()
 		# 	# print t.error, t.score, t.eval(1), t.eval(2), t.eval(3)
@@ -250,10 +272,30 @@ def test():
 		error_sum = total_error(population, x_vals, y_vals)
 		sum_scores = all_scores(error_sum, population)
 		population.sort(key=lambda x: x.score)
+		print count_score(population)
+		if population[-1].error <=.5:
+			break
 		population = next_gen(population, sum_scores, operations, terminals)
-	population.sort(key=lambda x: x.score)
-	print population[-1]
 
+	population[-1].to_string()
+	acumul = 0
+	for p in population:
+		p.to_string()
+		if not is_same(p, population[-1]):
+			print "False"
+			acumul += 1
+		else:
+			print "True"
+	print acumul
+
+"""
+	population.sort(key=lambda x: x.score)
+	population[-1].to_string()
+	print "error:", population[-1].error, " score:", population[-1].score
+	print population[-1].eval(1), population[-1].eval(2), population[-1].eval(3)
+	population[0].to_string()
+	print "error:", population[0].error, " score:", population[0].score
+"""
 	# terminals = make_terminals(-3, 3)
 	# operations = ['+', '-', '*', '/', '^']
 	# x_data = [1, 2, 3]
