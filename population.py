@@ -48,7 +48,8 @@ class Population():
 
     def populate(self):
         '''
-        Initializer method. Fills the Population object with SymbolTrees
+        Initializer method. Fills the Population object with randomly generated
+        SymbolTrees
 
         Parameters: self - The population of trees
         '''
@@ -104,24 +105,24 @@ class Population():
         # on the left. Also generate a terminal if you're too deep in the tree.
         if check_left < cutoff or at > self.depth_limit:
             left = OpNode("", self.random_terminal())
-            node.left = left
             left.depth = at + 1
+            node.left = left
         else:   # Make an operator node
             left = OpNode(self.random_operator(), 0)
-            node.left = left
             left.depth = at + 1
+            node.left = left
             self.add_children(cutoff, at+1, left)
 
         # Check if your other random number says you should generate a terminal
         # on the right. Also generate a terminal if you're too deep.
         if check_right < cutoff or at > self.depth_limit:
             right = OpNode("", self.random_terminal())
-            node.right = right
             right.depth = at + 1
+            node.right = right
         else:   # Make an operator node
             right = OpNode(self.random_operator(), 0)
-            node.right = right
             right.depth = at + 1
+            node.right = right
             self.add_children(cutoff, at+1, right)
 
     def next_gen(self):
@@ -179,7 +180,6 @@ class Population():
         Parameters: 
             self - The population
             size - The number of individuals to be randomly picked
-
 
         Returns: The fittest tree from the tournament
         '''

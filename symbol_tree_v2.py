@@ -107,7 +107,7 @@ class SymbolTree():
 
         while not self_selection:
             r = random()
-            if r < chance or not self_node.operator:
+            if r < chance or self_node.is_terminal():
                 self_selection = self_node
             else:
                 nxt = random()
@@ -119,6 +119,7 @@ class SymbolTree():
                 else:
                     self_node = self_node.right
 
+        chance = 0.1
         other_selection = None
         other_node = other.root
         other_parent = other.root
@@ -126,7 +127,7 @@ class SymbolTree():
 
         while not other_selection:
             r = random()
-            if r < chance or not other_node.operator:
+            if r < chance or other_node.is_terminal():
                 other_selection = other_node
             else:
                 nxt = random()

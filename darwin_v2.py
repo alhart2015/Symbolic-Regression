@@ -6,7 +6,6 @@ Authors: Spencer Chadinha and Alden Hart
 '''
 
 from population import Population
-from copy import deepcopy
 
 def get_data(filename):
     '''
@@ -41,14 +40,13 @@ def main():
     pop = Population(population_size, depth_limit, 
                     terminal_bound, reproduction_rate,
                     mutation_rate, x, y)
-    # pop.print_population()
-    pop.evolve(num_generations)
+    pop.print_population()
+    # pop.evolve(num_generations)
     best = pop.best()
-    # print best, best.error, best.score
+    print best, best.error, best.score
     # worst = pop.population[-1]
     # print worst, worst.error, worst.score
-    # cop = deepcopy(pop[0])
-    # print cop.
 
 if __name__ == '__main__':
     main()
+    

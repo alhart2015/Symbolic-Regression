@@ -22,6 +22,8 @@ def main():
     t.root.right.left.right.depth = 4
     print t
     print t.eval(2)
+    print n.is_terminal()
+    print t.root.right.left.right.is_terminal()
 
 if __name__ == '__main__':
     main()

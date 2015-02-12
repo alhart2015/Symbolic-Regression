@@ -19,3 +19,12 @@ class OpNode():
 
     def __str__(self):
         return str(self.operator) + " " + str(self.value)
+
+    def is_terminal(self):
+        '''
+        Helper to indicate whether a node is a terminal or not.
+
+        Returns: true if the node is a terminal, false otherwise
+        '''
+        return self.operator == ""
+        
