@@ -53,6 +53,53 @@ class SymbolTree():
 
         return out
 
+    def __eq__(self, other):
+        '''
+        Override for tree equality.
+
+        Parameters:
+            self - The tree
+            other - The other tree
+
+        Returns: True if the trees are identical, False otherwise
+        '''
+        return self.equality_helper(self.root, other.root)
+
+    def equality_helper(self, node_1, node_2):
+        '''
+        Helper method for testing equality between two trees.
+
+        Parameters:
+            self - The tree. Not needed, but for clarity I'm keeping it as a
+                class method, not making it a static one
+            node_1 - A node on the first tree
+            node_2 - A node on the second tree
+
+        Returns: True if the trees are identical, False otherwise
+        '''
+        if node_1 and node_2 and node_1.operator == node_2.operator \
+            and node_1.value == node_2.value:
+            if not node_1.left and not node_1.right and \
+                not node_2.left and not node_2.right:
+                return True
+            else:
+                return self.equality_helper(node_1.left, node_2.left) and \
+                    self.equality_helper(node_1.right, node_2.right)
+        return False
+
+    def __ne__(self, other):
+        '''
+        Override for inequality. You have to define __ne__ so that != behaves
+        like you expect it to.
+
+        Parameters:
+            self - The tree
+            other - The other tree
+
+        Returns: the opposite of self == other
+        '''
+        return not self.__eq__(other)
+
     def mutate(self, node, potential, current, rate, operations, terminals):
         '''
         Perform mutation on a tree.
@@ -235,4 +282,6 @@ class SymbolTree():
             e += abs(y_vals[i] - self.eval(x_vals[i]))
         self.error = e
         self.score = 1.0/(1+e)
+
+
 
