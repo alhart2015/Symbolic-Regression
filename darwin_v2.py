@@ -40,8 +40,8 @@ def main():
     pop = Population(population_size, depth_limit, 
                     terminal_bound, reproduction_rate,
                     mutation_rate, x, y)
-    pop.print_population()
-    # pop.evolve(num_generations)
+    # pop.print_population()
+    pop.evolve(num_generations)
     best = pop.best()
     print best, best.error, best.score
     # worst = pop.population[-1]

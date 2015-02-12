@@ -75,18 +75,18 @@ class SymbolTree():
                     past = node.value
                     while node.value == past:
                         node.value = choice(terminals)
-                    else:
-                        past = node.operator
-                        while node.operator == past:
-                            node.operator = choice(operations)
-                    current += 1
-
-                nxt = random()
-                LEFT = 0.5
-                if nxt < LEFT:
-                    self.mutate(node.left, potential, current, rate, operations, terminals)
                 else:
-                    self.mutate(node.right, potential, current, rate, operations, terminals)
+                    past = node.operator
+                    while node.operator == past:
+                        node.operator = choice(operations)
+                current += 1
+
+            nxt = random()
+            LEFT = 0.5
+            if nxt < LEFT:
+                self.mutate(node.left, potential, current, rate, operations, terminals)
+            else:
+                self.mutate(node.right, potential, current, rate, operations, terminals)
 
     def crossover(self, other):
         '''
