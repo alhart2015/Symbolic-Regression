@@ -41,8 +41,6 @@ class Population():
         self.reproduction_rate = rep
         self.mutation_rate = mutate
         self.population = []
-        self.total_score = 0
-        self.diversity = 0
         self.x_vals = x
         self.y_vals = y
         self.populate()
@@ -62,9 +60,7 @@ class Population():
             self.add_children(cutoff, 1, t.root)
             self.population.append(t)
             t.calc_error(self.x_vals, self.y_vals)
-            self.total_score += t.score
         self.population.sort(key=lambda t: t.score, reverse=True)
-        self.diversity = self.compare_all()
 
 
     def random_operator(self):
@@ -161,7 +157,6 @@ class Population():
 
         new_gen.sort(key=lambda t: t.score, reverse=True)
         self.population = new_gen
-        self.diversity = self.compare_all()
 
     def select_individual(self):
         '''
@@ -226,7 +221,7 @@ class Population():
             tree = self.population[i]
             print tree, tree.error, tree.score
 
-    def compare_all(self):
+    def diversity(self):
         '''
         Compares all trees in the population to give the diversity of the
         population. NOTE: this is implemented with a list, not a set. The
@@ -255,7 +250,6 @@ class Population():
             is_unique = True
 
         return count, float(count)/self.size
-
 
 
 def make_terminals(begin, end):

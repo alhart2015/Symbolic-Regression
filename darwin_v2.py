@@ -28,10 +28,10 @@ def get_data(filename):
 
 
 def main():
-    # x, y = get_data('test_data.txt')
-    x = [1,2,3,4]
-    y = [2,1,0,-1]
-    population_size = 10
+    x, y = get_data('test_data.txt')
+    # x = [1,2,3,4]
+    # y = [2,1,0,-1]
+    population_size = 10000
     depth_limit = 10
     terminal_bound = 3
     reproduction_rate = 0.1
@@ -44,8 +44,8 @@ def main():
     pop.evolve(num_generations)
     best = pop.best()
     print best, best.error, best.score
-    pop.print_population()
-    print pop.diversity
+    # pop.print_population()
+    print pop.diversity()
     # worst = pop.population[-1]
     # print worst, worst.error, worst.score
 
