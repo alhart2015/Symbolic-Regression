@@ -3,7 +3,7 @@ Client code for symbol tree revamp
 '''
 
 from symbol_tree_v2 import SymbolTree
-from op_node import OpNode
+from op_node_v2 import OpNode
 
 def main():
     n = OpNode("^", 0)

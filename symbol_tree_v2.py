@@ -170,7 +170,7 @@ class SymbolTree():
         '''
         if node:
             node.depth = depth
-            tree.depth = depth
+            self.depth = depth
             self.fix_depth(node.left, depth+1)
             self.fix_depth(node.right, depth+1)
 

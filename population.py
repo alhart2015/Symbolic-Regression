@@ -5,9 +5,9 @@ Authors: Spencer Chadinha and Alden Hart
 2/11/2015
 '''
 
-from op_node import OpNode
+from op_node_v2 import OpNode
 from symbol_tree_v2 import SymbolTree
-from random import random, choice
+from random import random, choice, sample
 from copy import deepcopy
 
 class Population():
@@ -61,6 +61,7 @@ class Population():
             self.population.append(t)
             t.calc_error(self.x_vals, self.y_vals)
             self.total_score += t.score
+        self.population.sort(key=lambda t: t.score, reverse=True)
 
 
     def random_operator(self):
@@ -103,8 +104,8 @@ class Population():
         # on the left. Also generate a terminal if you're too deep in the tree.
         if check_left < cutoff or at > self.depth_limit:
             left = OpNode("", self.random_terminal())
-            left.depth = at + 1
             node.left = left
+            left.depth = at + 1
         else:   # Make an operator node
             left = OpNode(self.random_operator(), 0)
             node.left = left
@@ -115,12 +116,12 @@ class Population():
         # on the right. Also generate a terminal if you're too deep.
         if check_right < cutoff or at > self.depth_limit:
             right = OpNode("", self.random_terminal())
-            right.depth = at + 1
             node.right = right
+            right.depth = at + 1
         else:   # Make an operator node
             right = OpNode(self.random_operator(), 0)
-            right.depth = at + 1
             node.right = right
+            right.depth = at + 1
             self.add_children(cutoff, at+1, right)
 
     def next_gen(self):
@@ -146,8 +147,8 @@ class Population():
 
         # Crossover for the rest of the new generation
         while len(new_gen) < self.size:
-            p1 = select_individual()
-            p2 = select_individual()
+            p1 = self.select_individual()
+            p2 = self.select_individual()
 
             # Gotta make copies to prevent overwriting bugs
             copy1 = deepcopy(p1)
@@ -155,7 +156,7 @@ class Population():
             copy1.crossover(copy2)
             new_gen.append(copy1)
 
-        new_gen.sort(key = lambda t: t.score)
+        new_gen.sort(key=lambda t: t.score, reverse=True)
         self.population = new_gen
 
     def select_individual(self):
@@ -167,15 +168,60 @@ class Population():
 
         Returns: The selected SymbolTree
         '''
-        r = random()
-        at = 0
-        acum = 0
-        tree = self.population[at]
-        while r > tree.score/self.total_score + acum:
-            acum += tree.score
-            at += 1
-            tree = self.population[at]
-        return tree
+        return self.tournament_selection(self.size/10)
+
+    def tournament_selection(self, size):
+        '''
+        Performs tournament_selection to select an individial for crossing over.
+        In tournament selection, you randomly select a subset of the population
+        and pick the single fittest individual from that subset.
+
+        Parameters: 
+            self - The population
+            size - The number of individuals to be randomly picked
+
+
+        Returns: The fittest tree from the tournament
+        '''
+        tourney = sample(self.population, size)
+        best_score = 0
+        for t in tourney:
+            if t.score > best_score:
+                best_score = t.score
+                best_tree = t
+
+        return best_tree
+
+    def best(self):
+        '''
+        Returns the most fit individial in that population
+
+        Parameters: self - The population
+
+        Returns: The most fit tree in the population
+        '''
+        return self.population[0]
+
+    def evolve(self, num_generations):
+        '''
+        Run genetic programming for the given number of generations.
+
+        Parameters:
+            self - The population
+            num_generations - The number of generations to let it run for
+        '''
+        for i in xrange(num_generations):
+            self.next_gen()
+
+    def print_population(self):
+        '''
+        Method for testing. Print out the whole population.
+
+        Parameters: self - The population
+        '''
+        for i in xrange(self.size):
+            tree = self.population[i]
+            print tree, tree.error, tree.score
 
 
 def make_terminals(begin, end):

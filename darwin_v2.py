@@ -6,6 +6,7 @@ Authors: Spencer Chadinha and Alden Hart
 '''
 
 from population import Population
+from copy import deepcopy
 
 def get_data(filename):
     '''
@@ -28,11 +29,26 @@ def get_data(filename):
 
 
 def main():
-    x = [1,2,3]
-    y = [3,2,1]
-    pop = Population(5, 4, 3, 0.1, 0.1, x, y)
-    for t in pop.population:
-        print t, t.eval(2), t.error, t.score
+    # x, y = get_data('test_data.txt')
+    x = [1,2,3,4]
+    y = [2,1,0,-1]
+    population_size = 10
+    depth_limit = 10
+    terminal_bound = 3
+    reproduction_rate = 0.1
+    mutation_rate = 0.1
+    num_generations = 35
+    pop = Population(population_size, depth_limit, 
+                    terminal_bound, reproduction_rate,
+                    mutation_rate, x, y)
+    # pop.print_population()
+    pop.evolve(num_generations)
+    best = pop.best()
+    # print best, best.error, best.score
+    # worst = pop.population[-1]
+    # print worst, worst.error, worst.score
+    # cop = deepcopy(pop[0])
+    # print cop.
 
 if __name__ == '__main__':
     main()
