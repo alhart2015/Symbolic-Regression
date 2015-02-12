@@ -42,6 +42,7 @@ class Population():
         self.mutation_rate = mutate
         self.population = []
         self.total_score = 0
+        self.diversity = 0
         self.x_vals = x
         self.y_vals = y
         self.populate()
@@ -63,6 +64,7 @@ class Population():
             t.calc_error(self.x_vals, self.y_vals)
             self.total_score += t.score
         self.population.sort(key=lambda t: t.score, reverse=True)
+        self.diversity = self.compare_all()
 
 
     def random_operator(self):
@@ -159,6 +161,7 @@ class Population():
 
         new_gen.sort(key=lambda t: t.score, reverse=True)
         self.population = new_gen
+        self.diversity = self.compare_all()
 
     def select_individual(self):
         '''
@@ -222,6 +225,37 @@ class Population():
         for i in xrange(self.size):
             tree = self.population[i]
             print tree, tree.error, tree.score
+
+    def compare_all(self):
+        '''
+        Compares all trees in the population to give the diversity of the
+        population. NOTE: this is implemented with a list, not a set. The
+        reason for this is that trees can change during their lifetime,
+        and in order to put them in a set they have to be hashable. I'm
+        not sure this matters in practice, as they won't be changed while
+        the set is around, but I'm erring on the side of caution here.
+
+        Parameters: self - The population
+
+        Returns: a tuple, (count, pct). Count is the number of unique trees
+            in the population, pct is the percentage of the population that
+            is unique. This is a reasonable measure for the overall
+            diversity of the population.
+        '''
+        unique = []
+        is_unique = True
+        count = 0
+        for i in xrange(self.size):
+            for tree in unique:
+                if self.population[i] == tree:
+                    is_unique = False
+            if is_unique:
+                unique.append(self.population[i])
+                count += 1
+            is_unique = True
+
+        return count, float(count)/self.size
+
 
 
 def make_terminals(begin, end):

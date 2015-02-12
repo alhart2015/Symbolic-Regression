@@ -44,6 +44,8 @@ def main():
     pop.evolve(num_generations)
     best = pop.best()
     print best, best.error, best.score
+    pop.print_population()
+    print pop.diversity
     # worst = pop.population[-1]
     # print worst, worst.error, worst.score
 
