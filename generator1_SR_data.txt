@@ -1,0 +1,1125 @@
+Evolution 0
+    GENERATION: 0
+        depth: 6
+        error: 137.790187216
+        diversity: 0.89
+    GENERATION: 1
+        depth: 7
+        error: 122.881210603
+        diversity: 0.774
+    GENERATION: 2
+        depth: 7
+        error: 122.881210603
+        diversity: 0.918
+    GENERATION: 3
+        depth: 9
+        error: 122.547602437
+        diversity: 0.73
+    GENERATION: 4
+        depth: 10
+        error: 118.308675805
+        diversity: 0.654
+    GENERATION: 5
+        depth: 11
+        error: 113.734724346
+        diversity: 0.676
+    GENERATION: 6
+        depth: 11
+        error: 113.734724346
+        diversity: 0.84
+    GENERATION: 7
+        depth: 11
+        error: 98.300723291
+        diversity: 0.824
+    GENERATION: 8
+        depth: 11
+        error: 93.0150526016
+        diversity: 0.874
+    GENERATION: 9
+        depth: 11
+        error: 53.4095927922
+        diversity: 0.876
+    GENERATION: 10
+        depth: 11
+        error: 53.370990594
+        diversity: 0.914
+    GENERATION: 11
+        depth: 11
+        error: 53.370990594
+        diversity: 0.924
+    GENERATION: 12
+        depth: 11
+        error: 53.1293262516
+        diversity: 0.932
+    GENERATION: 13
+        depth: 11
+        error: 49.2566699155
+        diversity: 0.92
+    GENERATION: 14
+        depth: 11
+        error: 49.2566699155
+        diversity: 0.914
+    GENERATION: 15
+        depth: 11
+        error: 49.2566699155
+        diversity: 0.926
+    GENERATION: 16
+        depth: 11
+        error: 49.2566699155
+        diversity: 0.916
+    GENERATION: 17
+        depth: 11
+        error: 49.2566699155
+        diversity: 0.908
+    GENERATION: 18
+        depth: 11
+        error: 49.2566699155
+        diversity: 0.898
+    GENERATION: 19
+        depth: 11
+        error: 49.2566699155
+        diversity: 0.93
+    GENERATION: 20
+        depth: 11
+        error: 49.2566699155
+        diversity: 0.932
+    GENERATION: 21
+        depth: 11
+        error: 49.2566699155
+        diversity: 0.888
+    GENERATION: 22
+        depth: 11
+        error: 49.2566699155
+        diversity: 0.898
+    GENERATION: 23
+        depth: 11
+        error: 49.2566699155
+        diversity: 0.91
+    GENERATION: 24
+        depth: 11
+        error: 49.2566699155
+        diversity: 0.906
+['/']
+['-', '*']
+['/', 3, 1, '+']
+['+', '-', 'x', '*']
+['+', 5, '+', 'x', 1, '+']
+['+', '*', 5, '*', 'x', '+']
+['/', '/', 1, '+', 'x', 'x', '+', -4]
+[0, 4, 'x', '/', '+', -4, '/', '/']
+[-2, 'x', '/', '/', 0, 4, 'x', '/']
+[0, 4, 'x', '/', -2, 'x']
+[-2, 'x']
+error: 49.2566699155  score: 0.0198978563777
+Evolution 1
+    GENERATION: 0
+        depth: 6
+        error: 203.131435724
+        diversity: 0.898
+    GENERATION: 1
+        depth: 7
+        error: 154.55982024
+        diversity: 0.738
+    GENERATION: 2
+        depth: 7
+        error: 154.55982024
+        diversity: 0.866
+    GENERATION: 3
+        depth: 7
+        error: 141.658944854
+        diversity: 0.878
+    GENERATION: 4
+        depth: 7
+        error: 125.635867606
+        diversity: 0.882
+    GENERATION: 5
+        depth: 7
+        error: 125.635867606
+        diversity: 0.894
+    GENERATION: 6
+        depth: 7
+        error: 125.635867606
+        diversity: 0.904
+    GENERATION: 7
+        depth: 10
+        error: 121.122604615
+        diversity: 0.676
+    GENERATION: 8
+        depth: 7
+        error: 91.8745847711
+        diversity: 0.55
+    GENERATION: 9
+        depth: 7
+        error: 38.6928521368
+        diversity: 0.48
+    GENERATION: 10
+        depth: 9
+        error: 20.9871455621
+        diversity: 0.728
+    GENERATION: 11
+        depth: 9
+        error: 20.9871455621
+        diversity: 0.822
+    GENERATION: 12
+        depth: 9
+        error: 20.9871455621
+        diversity: 0.878
+    GENERATION: 13
+        depth: 9
+        error: 20.9871455621
+        diversity: 0.894
+    GENERATION: 14
+        depth: 9
+        error: 20.9871455621
+        diversity: 0.884
+    GENERATION: 15
+        depth: 9
+        error: 20.9871455621
+        diversity: 0.904
+    GENERATION: 16
+        depth: 9
+        error: 20.9871455621
+        diversity: 0.902
+    GENERATION: 17
+        depth: 9
+        error: 20.9871455621
+        diversity: 0.882
+    GENERATION: 18
+        depth: 9
+        error: 20.9871455621
+        diversity: 0.91
+    GENERATION: 19
+        depth: 9
+        error: 20.9871455621
+        diversity: 0.888
+    GENERATION: 20
+        depth: 9
+        error: 20.9871455621
+        diversity: 0.932
+    GENERATION: 21
+        depth: 9
+        error: 20.9871455621
+        diversity: 0.908
+    GENERATION: 22
+        depth: 9
+        error: 20.9871455621
+        diversity: 0.916
+    GENERATION: 23
+        depth: 9
+        error: 20.9871455621
+        diversity: 0.922
+    GENERATION: 24
+        depth: 9
+        error: 20.9871455621
+        diversity: 0.908
+['/']
+[3, '+']
+['-', 4]
+['-', '/']
+['-', 'x', '*', 3]
+['-', '/', 'x', '/']
+['/', 'x', '*', 3, 'x', -2]
+['x', 5, 'x', '/']
+['x', -2]
+error: 20.9871455621  score: 0.0454811197378
+Evolution 2
+    GENERATION: 0
+        depth: 6
+        error: 208.121428755
+        diversity: 0.916
+    GENERATION: 1
+        depth: 3
+        error: 190.638984989
+        diversity: 0.77
+    GENERATION: 2
+        depth: 3
+        error: 190.638984989
+        diversity: 0.896
+    GENERATION: 3
+        depth: 7
+        error: 190.345956528
+        diversity: 0.694
+    GENERATION: 4
+        depth: 4
+        error: 190.194313907
+        diversity: 0.628
+    GENERATION: 5
+        depth: 4
+        error: 190.194313907
+        diversity: 0.904
+    GENERATION: 6
+        depth: 12
+        error: 190.193662067
+        diversity: 0.83
+    GENERATION: 7
+        depth: 6
+        error: 186.256906662
+        diversity: 0.724
+    GENERATION: 8
+        depth: 6
+        error: 186.256906662
+        diversity: 0.91
+    GENERATION: 9
+        depth: 6
+        error: 186.256906662
+        diversity: 0.89
+    GENERATION: 10
+        depth: 6
+        error: 186.256906662
+        diversity: 0.892
+    GENERATION: 11
+        depth: 6
+        error: 186.256906662
+        diversity: 0.89
+    GENERATION: 12
+        depth: 6
+        error: 186.256906662
+        diversity: 0.912
+    GENERATION: 13
+        depth: 8
+        error: 131.609969738
+        diversity: 0.866
+    GENERATION: 14
+        depth: 8
+        error: 131.609969738
+        diversity: 0.678
+    GENERATION: 15
+        depth: 8
+        error: 131.609969738
+        diversity: 0.7
+    GENERATION: 16
+        depth: 8
+        error: 131.609969738
+        diversity: 0.716
+    GENERATION: 17
+        depth: 8
+        error: 131.609969738
+        diversity: 0.358
+    GENERATION: 18
+        depth: 8
+        error: 131.609969738
+        diversity: 0.358
+    GENERATION: 19
+        depth: 8
+        error: 131.609969738
+        diversity: 0.422
+    GENERATION: 20
+        depth: 7
+        error: 93.9868589982
+        diversity: 0.472
+    GENERATION: 21
+        depth: 6
+        error: 64.9584692881
+        diversity: 0.844
+    GENERATION: 22
+        depth: 6
+        error: 64.9584692881
+        diversity: 0.88
+    GENERATION: 23
+        depth: 7
+        error: 64.4440457735
+        diversity: 0.852
+    GENERATION: 24
+        depth: 7
+        error: 64.4440457735
+        diversity: 0.83
+['/']
+['-', '-']
+['-', 4, 5, '*']
+['x', '+', '-', '-']
+['*', 'x', '+', '-', '*', '+']
+[4, -3, 'x', 5, 4, -2, 'x', '/', 'x', '-']
+[0, 5, -4, -1]
+error: 64.4440457735  score: 0.0152802289067
+Evolution 3
+    GENERATION: 0
+        depth: 3
+        error: 184.874778053
+        diversity: 0.898
+    GENERATION: 1
+        depth: 4
+        error: 145.596326339
+        diversity: 0.572
+    GENERATION: 2
+        depth: 5
+        error: 114.044731734
+        diversity: 0.556
+    GENERATION: 3
+        depth: 5
+        error: 112.010502466
+        diversity: 0.896
+    GENERATION: 4
+        depth: 5
+        error: 108.334064671
+        diversity: 0.83
+    GENERATION: 5
+        depth: 5
+        error: 101.234446454
+        diversity: 0.906
+    GENERATION: 6
+        depth: 5
+        error: 88.3888891236
+        diversity: 0.886
+    GENERATION: 7
+        depth: 5
+        error: 88.3888891236
+        diversity: 0.922
+    GENERATION: 8
+        depth: 5
+        error: 88.3888891236
+        diversity: 0.914
+    GENERATION: 9
+        depth: 5
+        error: 88.3888891236
+        diversity: 0.922
+    GENERATION: 10
+        depth: 5
+        error: 88.3888891236
+        diversity: 0.926
+    GENERATION: 11
+        depth: 5
+        error: 88.3888891236
+        diversity: 0.912
+    GENERATION: 12
+        depth: 5
+        error: 88.3888891236
+        diversity: 0.916
+    GENERATION: 13
+        depth: 5
+        error: 88.3888891236
+        diversity: 0.942
+    GENERATION: 14
+        depth: 5
+        error: 88.3888891236
+        diversity: 0.898
+    GENERATION: 15
+        depth: 5
+        error: 88.3888891236
+        diversity: 0.916
+    GENERATION: 16
+        depth: 5
+        error: 88.3888891236
+        diversity: 0.904
+    GENERATION: 17
+        depth: 5
+        error: 88.3888891236
+        diversity: 0.924
+    GENERATION: 18
+        depth: 5
+        error: 88.3888891236
+        diversity: 0.928
+    GENERATION: 19
+        depth: 5
+        error: 88.3888891236
+        diversity: 0.9
+    GENERATION: 20
+        depth: 5
+        error: 88.3888891236
+        diversity: 0.92
+    GENERATION: 21
+        depth: 5
+        error: 88.3888891236
+        diversity: 0.904
+    GENERATION: 22
+        depth: 5
+        error: 88.3888891236
+        diversity: 0.914
+    GENERATION: 23
+        depth: 5
+        error: 88.3888891236
+        diversity: 0.892
+    GENERATION: 24
+        depth: 5
+        error: 88.3888891236
+        diversity: 0.892
+['/']
+['-', '+']
+['-', -1, '*', '-']
+['x', '+', 'x', 'x', '-', '+']
+[-3, -5, 4, 'x', 'x', -5]
+error: 88.3888891236  score: 0.0111870726866
+Evolution 4
+    GENERATION: 0
+        depth: 6
+        error: 196.429537705
+        diversity: 0.908
+    GENERATION: 1
+        depth: 6
+        error: 182.922209702
+        diversity: 0.614
+    GENERATION: 2
+        depth: 6
+        error: 163.95246665
+        diversity: 0.776
+    GENERATION: 3
+        depth: 6
+        error: 146.762291645
+        diversity: 0.902
+    GENERATION: 4
+        depth: 6
+        error: 143.243285468
+        diversity: 0.896
+    GENERATION: 5
+        depth: 6
+        error: 143.243285468
+        diversity: 0.892
+    GENERATION: 6
+        depth: 6
+        error: 143.243285468
+        diversity: 0.918
+    GENERATION: 7
+        depth: 6
+        error: 143.243285468
+        diversity: 0.91
+    GENERATION: 8
+        depth: 6
+        error: 143.243285468
+        diversity: 0.912
+    GENERATION: 9
+        depth: 6
+        error: 141.319426589
+        diversity: 0.908
+    GENERATION: 10
+        depth: 6
+        error: 140.230205185
+        diversity: 0.91
+    GENERATION: 11
+        depth: 7
+        error: 132.468305814
+        diversity: 0.802
+    GENERATION: 12
+        depth: 7
+        error: 132.468305814
+        diversity: 0.758
+    GENERATION: 13
+        depth: 7
+        error: 132.468305814
+        diversity: 0.736
+    GENERATION: 14
+        depth: 7
+        error: 132.468305814
+        diversity: 0.738
+    GENERATION: 15
+        depth: 7
+        error: 124.053075216
+        diversity: 0.79
+    GENERATION: 16
+        depth: 7
+        error: 124.053075216
+        diversity: 0.848
+    GENERATION: 17
+        depth: 7
+        error: 116.886758534
+        diversity: 0.898
+    GENERATION: 18
+        depth: 7
+        error: 105.643964243
+        diversity: 0.756
+    GENERATION: 19
+        depth: 7
+        error: 88.6585784182
+        diversity: 0.85
+    GENERATION: 20
+        depth: 7
+        error: 88.6585784182
+        diversity: 0.906
+    GENERATION: 21
+        depth: 7
+        error: 88.6585784182
+        diversity: 0.908
+    GENERATION: 22
+        depth: 10
+        error: 88.4589004255
+        diversity: 0.918
+    GENERATION: 23
+        depth: 10
+        error: 50.5579089464
+        diversity: 0.758
+    GENERATION: 24
+        depth: 10
+        error: 36.6889935987
+        diversity: 0.862
+['/']
+['+', '-']
+['/', '+', '-', '*']
+['+', '+', '/', '/', '-', '*', 'x', '*']
+['x', 3, '/', '+', '+', '/', '-', '/', '-', '*', 'x', '/', -3, '/']
+['+', '/', '/', '/', 'x', 3, 'x', 'x', 5, 'x', 'x', 'x', '+', '*', 'x', '*', '+', '/', 'x', 'x']
+['x', 3, 'x', 'x', '+', '/', '-', '/', '-', '/', 'x', '/', -3, '*', 'x', 3, 'x', 'x']
+['x', 3, 'x', 'x', 5, 'x', 'x', 'x', 5, 'x', '-', '/', '+', '/', 1, 'x']
+[5, 'x', 'x', 'x', 'x', 3, 'x', 'x']
+error: 36.6889935987  score: 0.0265329451523
+Evolution 5
+    GENERATION: 0
+        depth: 5
+        error: 175.985287432
+        diversity: 0.908
+    GENERATION: 1
+        depth: 6
+        error: 144.791634039
+        diversity: 0.75
+    GENERATION: 2
+        depth: 6
+        error: 112.231569544
+        diversity: 0.71
+    GENERATION: 3
+        depth: 7
+        error: 102.080297849
+        diversity: 0.828
+    GENERATION: 4
+        depth: 7
+        error: 102.080297849
+        diversity: 0.656
+    GENERATION: 5
+        depth: 7
+        error: 102.080297849
+        diversity: 0.698
+    GENERATION: 6
+        depth: 6
+        error: 94.9690313838
+        diversity: 0.752
+    GENERATION: 7
+        depth: 6
+        error: 88.3888891236
+        diversity: 0.84
+    GENERATION: 8
+        depth: 6
+        error: 88.3888891236
+        diversity: 0.892
+    GENERATION: 9
+        depth: 6
+        error: 88.3888891236
+        diversity: 0.922
+    GENERATION: 10
+        depth: 6
+        error: 88.3888891236
+        diversity: 0.92
+    GENERATION: 11
+        depth: 6
+        error: 88.3888891236
+        diversity: 0.898
+    GENERATION: 12
+        depth: 6
+        error: 88.3888891236
+        diversity: 0.9
+    GENERATION: 13
+        depth: 6
+        error: 88.3888891236
+        diversity: 0.906
+    GENERATION: 14
+        depth: 6
+        error: 88.3888891236
+        diversity: 0.91
+    GENERATION: 15
+        depth: 6
+        error: 88.3888891236
+        diversity: 0.898
+    GENERATION: 16
+        depth: 7
+        error: 73.903510853
+        diversity: 0.898
+    GENERATION: 17
+        depth: 7
+        error: 73.903510853
+        diversity: 0.916
+    GENERATION: 18
+        depth: 7
+        error: 73.903510853
+        diversity: 0.914
+    GENERATION: 19
+        depth: 7
+        error: 65.7316575904
+        diversity: 0.918
+    GENERATION: 20
+        depth: 7
+        error: 60.9003714005
+        diversity: 0.924
+    GENERATION: 21
+        depth: 7
+        error: 60.9003714005
+        diversity: 0.892
+    GENERATION: 22
+        depth: 8
+        error: 36.5422027535
+        diversity: 0.562
+    GENERATION: 23
+        depth: 8
+        error: 36.5422027535
+        diversity: 0.54
+    GENERATION: 24
+        depth: 8
+        error: 36.5422027535
+        diversity: 0.766
+['/']
+['*', '-']
+[3, 3, '-', '*']
+['-', '*', -3, 3]
+['-', '*', 'x', 3]
+['-', '*', -3, 3]
+['*', 'x', 'x', 3]
+['x', 'x']
+error: 36.5422027535  score: 0.0266366895562
+Evolution 6
+    GENERATION: 0
+        depth: 1
+        error: 208.136179819
+        diversity: 0.894
+    GENERATION: 1
+        depth: 6
+        error: 194.609225184
+        diversity: 0.694
+    GENERATION: 2
+        depth: 7
+        error: 186.462894783
+        diversity: 0.606
+    GENERATION: 3
+        depth: 8
+        error: 182.923878513
+        diversity: 0.588
+    GENERATION: 4
+        depth: 8
+        error: 182.86411957
+        diversity: 0.734
+    GENERATION: 5
+        depth: 8
+        error: 182.86411957
+        diversity: 0.872
+    GENERATION: 6
+        depth: 8
+        error: 182.86411957
+        diversity: 0.884
+    GENERATION: 7
+        depth: 8
+        error: 118.966589678
+        diversity: 0.838
+    GENERATION: 8
+        depth: 8
+        error: 98.6411584374
+        diversity: 0.75
+    GENERATION: 9
+        depth: 10
+        error: 87.5677400015
+        diversity: 0.31
+    GENERATION: 10
+        depth: 12
+        error: 63.947967222
+        diversity: 0.386
+    GENERATION: 11
+        depth: 12
+        error: 63.947967222
+        diversity: 0.516
+    GENERATION: 12
+        depth: 12
+        error: 63.947967222
+        diversity: 0.71
+    GENERATION: 13
+        depth: 12
+        error: 63.947967222
+        diversity: 0.814
+    GENERATION: 14
+        depth: 10
+        error: 46.9644788067
+        diversity: 0.824
+    GENERATION: 15
+        depth: 10
+        error: 37.1931721842
+        diversity: 0.886
+    GENERATION: 16
+        depth: 10
+        error: 37.1931721842
+        diversity: 0.914
+    GENERATION: 17
+        depth: 10
+        error: 37.1931721842
+        diversity: 0.868
+    GENERATION: 18
+        depth: 10
+        error: 37.1931721842
+        diversity: 0.906
+    GENERATION: 19
+        depth: 10
+        error: 37.1931721842
+        diversity: 0.908
+    GENERATION: 20
+        depth: 10
+        error: 37.1931721842
+        diversity: 0.882
+    GENERATION: 21
+        depth: 10
+        error: 37.1931721842
+        diversity: 0.88
+    GENERATION: 22
+        depth: 10
+        error: 37.1931721842
+        diversity: 0.87
+    GENERATION: 23
+        depth: 12
+        error: 32.7429012238
+        diversity: 0.824
+    GENERATION: 24
+        depth: 12
+        error: 32.7429012238
+        diversity: 0.85
+['/']
+['+', '+']
+[5, 5, '-', '+']
+['+', '+', 5, 1]
+['-', 5, 'x', 'x']
+['-', '+']
+['*', 'x', 'x', 'x']
+['/', 'x']
+['x', '/']
+['x', 'x']
+error: 32.7429012238  score: 0.0296358630625
+Evolution 7
+    GENERATION: 0
+        depth: 6
+        error: 208.136179819
+        diversity: 0.894
+    GENERATION: 1
+        depth: 7
+        error: 203.895129562
+        diversity: 0.616
+    GENERATION: 2
+        depth: 6
+        error: 172.030002243
+        diversity: 0.512
+    GENERATION: 3
+        depth: 6
+        error: 139.140943404
+        diversity: 0.876
+    GENERATION: 4
+        depth: 7
+        error: 122.510122745
+        diversity: 0.622
+    GENERATION: 5
+        depth: 7
+        error: 105.714470399
+        diversity: 0.656
+    GENERATION: 6
+        depth: 8
+        error: 69.956478275
+        diversity: 0.564
+    GENERATION: 7
+        depth: 8
+        error: 68.153483543
+        diversity: 0.808
+    GENERATION: 8
+        depth: 10
+        error: 57.1986613618
+        diversity: 0.786
+    GENERATION: 9
+        depth: 10
+        error: 38.3314715546
+        diversity: 0.69
+    GENERATION: 10
+        depth: 10
+        error: 38.3314715546
+        diversity: 0.746
+    GENERATION: 11
+        depth: 10
+        error: 18.2700978668
+        diversity: 0.738
+    GENERATION: 12
+        depth: 10
+        error: 18.2700978668
+        diversity: 0.812
+    GENERATION: 13
+        depth: 10
+        error: 18.2700978668
+        diversity: 0.878
+    GENERATION: 14
+        depth: 10
+        error: 18.2700978668
+        diversity: 0.888
+    GENERATION: 15
+        depth: 10
+        error: 18.2700978668
+        diversity: 0.918
+    GENERATION: 16
+        depth: 10
+        error: 18.2700978668
+        diversity: 0.888
+    GENERATION: 17
+        depth: 10
+        error: 18.2700978668
+        diversity: 0.916
+    GENERATION: 18
+        depth: 10
+        error: 18.2700978668
+        diversity: 0.916
+    GENERATION: 19
+        depth: 10
+        error: 18.2700978668
+        diversity: 0.914
+    GENERATION: 20
+        depth: 10
+        error: 18.2700978668
+        diversity: 0.912
+    GENERATION: 21
+        depth: 10
+        error: 18.2700978668
+        diversity: 0.93
+    GENERATION: 22
+        depth: 10
+        error: 18.2700978668
+        diversity: 0.902
+    GENERATION: 23
+        depth: 10
+        error: 18.2700978668
+        diversity: 0.914
+    GENERATION: 24
+        depth: 10
+        error: 18.2700978668
+        diversity: 0.93
+['/']
+['/', '+']
+['-', 'x', -2, '+']
+['-', -4, -2, '+']
+[4, -4, '+', '/']
+[-2, '+', 5, '+']
+['x', '/', 'x', '/']
+[5, '+', 'x', -3]
+['x', '/']
+['x', -3]
+error: 18.2700978668  score: 0.0518938724085
+Evolution 8
+    GENERATION: 0
+        depth: 6
+        error: 204.254582988
+        diversity: 0.878
+    GENERATION: 1
+        depth: 5
+        error: 193.505972056
+        diversity: 0.686
+    GENERATION: 2
+        depth: 6
+        error: 190.032934413
+        diversity: 0.578
+    GENERATION: 3
+        depth: 7
+        error: 189.47083398
+        diversity: 0.482
+    GENERATION: 4
+        depth: 7
+        error: 189.467562363
+        diversity: 0.502
+    GENERATION: 5
+        depth: 7
+        error: 189.467562363
+        diversity: 0.606
+    GENERATION: 6
+        depth: 7
+        error: 189.467562363
+        diversity: 0.576
+    GENERATION: 7
+        depth: 6
+        error: 130.152522891
+        diversity: 0.748
+    GENERATION: 8
+        depth: 6
+        error: 130.152522891
+        diversity: 0.874
+    GENERATION: 9
+        depth: 8
+        error: 121.08466995
+        diversity: 0.844
+    GENERATION: 10
+        depth: 7
+        error: 113.752744866
+        diversity: 0.574
+    GENERATION: 11
+        depth: 8
+        error: 105.797321687
+        diversity: 0.454
+    GENERATION: 12
+        depth: 8
+        error: 100.171137495
+        diversity: 0.704
+    GENERATION: 13
+        depth: 8
+        error: 91.7822316838
+        diversity: 0.796
+    GENERATION: 14
+        depth: 8
+        error: 91.7822316838
+        diversity: 0.898
+    GENERATION: 15
+        depth: 8
+        error: 91.7822316838
+        diversity: 0.898
+    GENERATION: 16
+        depth: 8
+        error: 91.7822316838
+        diversity: 0.898
+    GENERATION: 17
+        depth: 8
+        error: 91.7822316838
+        diversity: 0.896
+    GENERATION: 18
+        depth: 8
+        error: 91.7822316838
+        diversity: 0.922
+    GENERATION: 19
+        depth: 8
+        error: 91.7822316838
+        diversity: 0.914
+    GENERATION: 20
+        depth: 8
+        error: 91.7822316838
+        diversity: 0.918
+    GENERATION: 21
+        depth: 8
+        error: 91.7822316838
+        diversity: 0.922
+    GENERATION: 22
+        depth: 8
+        error: 91.7822316838
+        diversity: 0.926
+    GENERATION: 23
+        depth: 8
+        error: 91.7822316838
+        diversity: 0.954
+    GENERATION: 24
+        depth: 8
+        error: 91.7822316838
+        diversity: 0.93
+['/']
+['-', '-']
+['-', '+', '-', '+']
+[-5, '+', -5, '/', -5, '+', '+', '+']
+[-5, '/', 'x', '+', '+', '/', '-', '-', -5, 'x']
+['x', '+', -5, '/', -5, 'x', 'x', '+', 2, '/', 'x', '*']
+[-5, '/', 'x', 'x', -5, '/', 3, 2, 'x', 'x']
+['x', 'x', 'x', 'x']
+error: 91.7822316838  score: 0.0107779257068
+Evolution 9
+    GENERATION: 0
+        depth: 6
+        error: 199.749232365
+        diversity: 0.904
+    GENERATION: 1
+        depth: 6
+        error: 177.953872218
+        diversity: 0.754
+    GENERATION: 2
+        depth: 7
+        error: 173.8511079
+        diversity: 0.602
+    GENERATION: 3
+        depth: 7
+        error: 167.680004786
+        diversity: 0.838
+    GENERATION: 4
+        depth: 8
+        error: 164.535622817
+        diversity: 0.766
+    GENERATION: 5
+        depth: 8
+        error: 162.348144656
+        diversity: 0.69
+    GENERATION: 6
+        depth: 8
+        error: 156.606856322
+        diversity: 0.636
+    GENERATION: 7
+        depth: 8
+        error: 151.882340292
+        diversity: 0.578
+    GENERATION: 8
+        depth: 8
+        error: 143.537698898
+        diversity: 0.522
+    GENERATION: 9
+        depth: 9
+        error: 135.170105453
+        diversity: 0.608
+    GENERATION: 10
+        depth: 10
+        error: 125.541008848
+        diversity: 0.734
+    GENERATION: 11
+        depth: 10
+        error: 123.468826748
+        diversity: 0.728
+    GENERATION: 12
+        depth: 11
+        error: 121.500259547
+        diversity: 0.604
+    GENERATION: 13
+        depth: 11
+        error: 118.182813745
+        diversity: 0.668
+    GENERATION: 14
+        depth: 12
+        error: 115.373905539
+        diversity: 0.638
+    GENERATION: 15
+        depth: 15
+        error: 109.239679389
+        diversity: 0.694
+    GENERATION: 16
+        depth: 15
+        error: 106.023705797
+        diversity: 0.71
+    GENERATION: 17
+        depth: 15
+        error: 105.716960584
+        diversity: 0.88
+    GENERATION: 18
+        depth: 15
+        error: 105.716960584
+        diversity: 0.91
+    GENERATION: 19
+        depth: 15
+        error: 105.716960584
+        diversity: 0.892
+    GENERATION: 20
+        depth: 15
+        error: 105.716960584
+        diversity: 0.894
+    GENERATION: 21
+        depth: 15
+        error: 105.485393351
+        diversity: 0.898
+    GENERATION: 22
+        depth: 15
+        error: 105.485393351
+        diversity: 0.898
+    GENERATION: 23
+        depth: 15
+        error: 102.336826853
+        diversity: 0.928
+    GENERATION: 24
+        depth: 15
+        error: 99.2080244785
+        diversity: 0.9
+['/']
+['+', '-']
+['+', 5, '-', '+']
+['+', 'x', '-', 'x', 'x', 'x']
+['+', 'x', '-', '+']
+['+', 4, '-', -4, 'x', 'x']
+[5, '+', '-', 'x']
+['+', 'x', '-', -4]
+[5, 5, '-', '/']
+['-', '/', '+', -4]
+['-', -4, '+', -4, 5, 4]
+['-', '/', 5, 4]
+[3, '*', '+', -4]
+['+', '*', 5, 4]
+['x', 'x', 'x', -2]
+error: 99.2080244785  score: 0.0099792407365
+Best of the GP Winners:
+['/']
+['/', '+']
+['-', 'x', -2, '+']
+['-', -4, -2, '+']
+[4, -4, '+', '/']
+[-2, '+', 5, '+']
+['x', '/', 'x', '/']
+[5, '+', 'x', -3]
+['x', '/']
+['x', -3]
+error: 4.46382769871
+spchadinha:hw2 schadinha14$ 
