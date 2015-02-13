@@ -209,6 +209,10 @@ class Population():
             num_generations - The number of generations to let it run for
         '''
         for i in xrange(num_generations):
+            print "Generation", i+1
+            best = self.best()
+            print best, best.error, best.score
+            print "Diversity:", self.diversity()
             self.next_gen()
 
     def print_population(self):
