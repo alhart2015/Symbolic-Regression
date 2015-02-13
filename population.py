@@ -148,7 +148,9 @@ class Population():
         Parameters: self - The population
         '''
         new_gen = []
-        node_mutation_rate = 0.25
+        node_mutation_rate = 0.4
+        if self.diversity()[1] < 0.5:   # Population is too homogenous
+            self.mutation_rate *= 2     # So double the mutation rate
 
         # Copy the best existing members into the next generation. This
         # is called reproduction
@@ -159,6 +161,10 @@ class Population():
         for i in xrange(int(self.size * self.mutation_rate) + 1):
             t = choice(self.population)
             t.mutate(t.root, node_mutation_rate, self.operators, self.terminals)
+        self.mutation_rate /= 2         # Return the mutation rate back to
+                                        # normal so that all subsequent
+                                        # generations don't have crazy
+                                        # mutation rates
 
         # Crossover for the rest of the new generation
         while len(new_gen) < self.size:
@@ -230,11 +236,12 @@ class Population():
             self - The population
             num_generations - The number of generations to let it run for
         '''
+        print self.diversity()
         for i in xrange(num_generations):
             print "Generation", i+1, ":",
             best = self.best()
             print best.error
-            if i+1 % 5 == 0:
+            if (i+1) % 5 == 0:
                 print self.diversity()
             # Cut the program short if the error is really really tiny
             if self.best().error < 0.2:
