@@ -43,6 +43,7 @@ class Population():
         self.population = []
         self.x_vals = x
         self.y_vals = y
+        self.best_depth = 0
         self.populate()
 
     def populate(self):
@@ -54,13 +55,26 @@ class Population():
         '''
         cutoff = 0.5
         for i in xrange(self.size):
-            op = self.random_operator()
-            node = OpNode(op, 0)
-            t = SymbolTree(node)
-            self.add_children(cutoff, 1, t.root)
-            self.population.append(t)
-            t.calc_error(self.x_vals, self.y_vals)
+            self.population.append(self.new_tree(cutoff))
         self.population.sort(key=lambda t: t.score, reverse=True)
+        self.best_depth = self.best().depth
+
+    def new_tree(self, cutoff):
+        '''
+        Make a new random tree.
+
+        Parameters:
+            self - The population
+            cutoff - The left/right skew in adding children
+
+        Returns: a new random tree
+        '''
+        op = self.random_operator()
+        node = OpNode(op, 0)
+        t = SymbolTree(node)
+        self.add_children(cutoff, 1, t.root, t)
+        t.calc_error(self.x_vals, self.y_vals)
+        return t
 
 
     def random_operator(self):
@@ -83,7 +97,7 @@ class Population():
         '''
         return choice(self.terminals)
 
-    def add_children(self, cutoff, at, node):
+    def add_children(self, cutoff, at, node, tree):
         '''
         Adds children to the given tree at the given node recursively. Generates
         a random symbol tree given the starting node, a percent chance of
@@ -95,6 +109,7 @@ class Population():
             cutoff - The probability with which you add a terminal node
             at - The current depth of the function
             node - The node at the root of the subtree you're adding to
+            tree - The tree you're adding to
         '''
         check_left = random()
         check_right = random()
@@ -109,7 +124,7 @@ class Population():
             left = OpNode(self.random_operator(), 0)
             left.depth = at + 1
             node.left = left
-            self.add_children(cutoff, at+1, left)
+            self.add_children(cutoff, at+1, left, tree)
 
         # Check if your other random number says you should generate a terminal
         # on the right. Also generate a terminal if you're too deep.
@@ -121,7 +136,10 @@ class Population():
             right = OpNode(self.random_operator(), 0)
             right.depth = at + 1
             node.right = right
-            self.add_children(cutoff, at+1, right)
+            self.add_children(cutoff, at+1, right, tree)
+
+        if at > tree.depth:
+            tree.depth = at
 
     def next_gen(self):
         '''
@@ -130,8 +148,7 @@ class Population():
         Parameters: self - The population
         '''
         new_gen = []
-        possible_mutations = 1
-        node_mutation_rate = 0.5
+        node_mutation_rate = 0.25
 
         # Copy the best existing members into the next generation. This
         # is called reproduction
@@ -141,8 +158,7 @@ class Population():
         # Mutate a random tree
         for i in xrange(int(self.size * self.mutation_rate) + 1):
             t = choice(self.population)
-            t.mutate(t.root, possible_mutations, 0, node_mutation_rate,
-                     self.operators, self.terminals)
+            t.mutate(t.root, node_mutation_rate, self.operators, self.terminals)
 
         # Crossover for the rest of the new generation
         while len(new_gen) < self.size:
@@ -153,7 +169,13 @@ class Population():
             copy1 = deepcopy(p1)
             copy2 = deepcopy(p2)
             copy1.crossover(copy2)
-            new_gen.append(copy1)
+            copy1.calc_error(self.x_vals, self.y_vals)
+            # The tree isn't too deep, so add it
+            if copy1.depth < self.best_depth:
+                new_gen.append(copy1)
+            # The tree is too deep, so delete it and inject a new one
+            else:
+                new_gen.append(self.new_tree(0.5))
 
         new_gen.sort(key=lambda t: t.score, reverse=True)
         self.population = new_gen
@@ -212,12 +234,11 @@ class Population():
             print "Generation", i+1
             best = self.best()
             print best, best.error, best.score
-            print "Diversity:", self.diversity()
             self.next_gen()
 
     def print_population(self):
         '''
-        Method for testing. Print out the whole population.
+        # Method for testing. Print out the whole population.
 
         Parameters: self - The population
         '''

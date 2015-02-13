@@ -100,40 +100,27 @@ class SymbolTree():
         '''
         return not self.__eq__(other)
 
-    def mutate(self, node, potential, current, rate, operations, terminals):
+    def mutate(self, node, rate, operations, terminals):
         '''
         Perform mutation on a tree.
 
         Parameters:
             self - The tree
             node - The node where mutation will take place
-            potential - The total number of mutations you're willing to let
-                happen
-            current - The number of mutations that have already happened in this
-                tree
             rate - The chance that mutation happens at the given node
             operations - List of possible operations
             terminals - List of possible terminals
         '''
-        if (current < potential) and node:
-            r = random()
-            if r < rate:
-                if not node.operator:
-                    past = node.value
-                    while node.value == past:
-                        node.value = choice(terminals)
-                else:
-                    past = node.operator
-                    while node.operator == past:
-                        node.operator = choice(operations)
-                current += 1
-
-            nxt = random()
-            LEFT = 0.5
-            if nxt < LEFT:
-                self.mutate(node.left, potential, current, rate, operations, terminals)
+        r = random()
+        if r < rate:
+            if not node.operator:
+                node.value = choice(terminals)
             else:
-                self.mutate(node.right, potential, current, rate, operations, terminals)
+                node.operator = choice(operations)
+        if node.left:
+            self.mutate(node.left, rate, operations, terminals)
+        if node.right:
+            self.mutate(node.right, rate, operations, terminals)
 
     def crossover(self, other):
         '''
