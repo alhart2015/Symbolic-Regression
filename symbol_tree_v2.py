@@ -270,5 +270,23 @@ class SymbolTree():
         self.error = e
         self.score = 1.0/(1+e)
 
+    def return_error(self, x_vals, y_vals):
+        '''
+        Identical to above, except it returns the error and doesn't overwrite
+        the field in the tree. Uses to compare training error to test error.
+
+        Parameters:
+            self - The tree
+            x_vals - A list of the x-values of the dataset
+            y_vals - A list of the y-values of the dataset
+
+        Returns: The total error of the tree
+        '''
+        e = 0
+        for i in xrange(len(x_vals)):
+            e += abs(y_vals[i] - self.eval(x_vals[i]))
+
+        return e
+
 
 
