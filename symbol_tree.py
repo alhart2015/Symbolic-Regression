@@ -4,7 +4,8 @@ Authors: Spencer Chadinha and Alden Hart
 2/2/2015
 '''
 
-from random import random, randint
+from random import random, randint, choice
+from op_node import OpNode
 # from random import randint
 
 class SymbolTree():
@@ -13,6 +14,8 @@ class SymbolTree():
         self.root = root
         self.score = 0      # Fitness score != squared error
         self.error = 0      # Squared error from the actual
+        self.max_depth = 0
+        self.size = 1
 
 
     # def add_node(self, node):
@@ -77,6 +80,53 @@ class SymbolTree():
                 self.mutate(node.left, potential, current, rate, operations, terminals)
             else:
                 self.mutate(node.right, potential, current, rate, operations, terminals)
+
+    def mutate2(self, node, rate, operations, terminals):
+        r = random()
+        if r < rate:
+            if node.operator == "":
+                node.value = choice(terminals)
+            else:
+                node.operator = choice(operations)
+        if node.left:
+            self.mutate2(node.left, rate, operations, terminals)
+        if node.right:
+            self.mutate2(node.right, rate, operations, terminals)
+
+    def crossover2(self, other):
+        r1 = randint(1, self.size)
+        
+        select = []
+        count = 0
+        select.append[self.root]
+        node = self.root
+        while count != r1:
+            node = select.pop[0]
+            if node.left:
+                select.append(node.left)
+            if node.right:
+                select.append(node.right)
+            count += 1
+
+        temp_node = OpNode(node.operator, node.value)
+        temp_node.left = node.left
+        temp_node.right = node.right
+
+
+
+
+    def c_over_help(self, node, count, target):
+        count += 1
+        if count == target:
+            print "operator:", node.operator, " value:",node.value
+            return node
+        if node.left:
+            print "going left"
+            self.c_over_help(node.left, count, target)
+        if node.right:
+            print "going right"
+            self.c_over_help(node.right, count, target)
+
 
     def crossover(self, other):
         """ Unfinished crossing over method. there is an issue when assigning
@@ -151,12 +201,18 @@ class SymbolTree():
                 #self._fix_depth(other_parent.right, temp.depth)
                 self_parent.right = other_parent.right
                 other_parent.right = temp
+
+        self.size = 0
+        other.size = 0
         self.fix_depth(self.root, 1)
         other.fix_depth(other.root, 1)
 
     def fix_depth(self, node, depth):
         if node:
+            self.size += 1
             node.depth = depth
+            if depth > self.max_depth:
+                self.max_depth = depth
             self.fix_depth(node.left, depth+1)
             self.fix_depth(node.right, depth+1)
 
@@ -169,7 +225,7 @@ class SymbolTree():
 
         Returns: the value of the subtree rooted at this node
         '''
-        self.to_string()
+        #self.to_string()
         return self.eval_helper(self.root, xVal)
 
     def eval_helper(self, node, xVal):
@@ -195,15 +251,15 @@ class SymbolTree():
                 return node.value
         else:
             if node.operator == "+":
-                node.value = self.eval_helper(node.left, xVal) +\
+                node.value = float(self.eval_helper(node.left, xVal)) +\
                  self.eval_helper(node.right, xVal)
                 return node.value
             elif node.operator == "-":
-                node.value = self.eval_helper(node.left, xVal) -\
+                node.value = float(self.eval_helper(node.left, xVal)) -\
                  self.eval_helper(node.right, xVal)
                 return node.value
             elif node.operator == "*":
-                node.value = self.eval_helper(node.left, xVal) *\
+                node.value = float(self.eval_helper(node.left, xVal)) *\
                  self.eval_helper(node.right, xVal)
                 return node.value
             elif node.operator == "^":
