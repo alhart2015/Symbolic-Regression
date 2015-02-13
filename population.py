@@ -234,6 +234,8 @@ class Population():
             print "Generation", i+1, ":",
             best = self.best()
             print best.error
+            if i+1 % 5 == 0:
+                print self.diversity()
             # Cut the program short if the error is really really tiny
             if self.best().error < 0.2:
                 return

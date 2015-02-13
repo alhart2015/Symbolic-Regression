@@ -1,0 +1,491 @@
+ATTEMPT 1
+Generation 1 : 94.8936532896
+Generation 2 : 72.1905151233
+Generation 3 : 69.6328708096
+Generation 4 : 68.9711415785
+Generation 5 : 68.9711415785
+Generation 6 : 68.501554306
+Generation 7 : 57.1375379793
+Generation 8 : 37.9398735248
+Generation 9 : 34.6370497597
+Generation 10 : 19.9283831167
+Generation 11 : 8.52025880547
+Generation 12 : 8.52025880547
+Generation 13 : 7.2424751896
+Generation 14 : 3.6212375948
+Generation 15 : 3.6212375948
+Generation 16 : 3.6212375948
+Generation 17 : 3.6212375948
+Generation 18 : 3.6212375948
+Generation 19 : 3.6212375948
+Generation 20 : 1.3370814872e-14
+/ 
++ + 
+4 + + + 
+5 / 5 * + + 
+3 3 x -3 5 * 4 * 
+x -3 x x 
+ 1.3370814872e-14
+ATTEMPT 2
+Generation 1 : 103.82171405
+Generation 2 : 97.1896667259
+Generation 3 : 97.1896667259
+Generation 4 : 87.0795228301
+Generation 5 : 85.7470602613
+Generation 6 : 72.1249422729
+Generation 7 : 66.1746993603
+Generation 8 : 63.4756309985
+Generation 9 : 62.6638980752
+Generation 10 : 62.6638980752
+Generation 11 : 58.2908305058
+Generation 12 : 57.3950260772
+Generation 13 : 57.3950260772
+Generation 14 : 57.3950260772
+Generation 15 : 55.9900473699
+Generation 16 : 55.738815386
+Generation 17 : 55.738815386
+Generation 18 : 55.738815386
+Generation 19 : 55.1587016461
+Generation 20 : 54.6074358226
+Generation 21 : 54.6074358226
+Generation 22 : 53.2822324633
+Generation 23 : 53.2822324633
+Generation 24 : 53.1047663211
+Generation 25 : 53.1047663211
+Generation 26 : 53.1047663211
+Generation 27 : 53.1047663211
+Generation 28 : 53.1047663211
+Generation 29 : 53.1047663211
+Generation 30 : 52.9545413504
+Generation 31 : 51.9517637435
+Generation 32 : 51.9517637435
+Generation 33 : 51.9517637435
+Generation 34 : 51.9517637435
+Generation 35 : 51.9517637435
+/ 
+/ + 
++ * 3 * 
+/ / * / 3 * 
+* / 2 * x / + x x 2 
++ / 3 * + x / * -5 + 
++ / * * + x 3 + -5 * x + / * 
+3 / 3 + -2 x 3 x 3 + 3 * x * 2 x -4 * 4 * 
+3 * x 2 x * 3 x x + x * 3 x 
+3 x 3 x / x x / 
+x + * x 
+-3 x 1 * 
+-3 x 
+ 51.9517637435
+ATTEMPT 3
+Generation 1 : 88.8826888462
+Generation 2 : 88.8826888462
+Generation 3 : 88.8826888462
+Generation 4 : 88.8826888462
+Generation 5 : 82.5600764811
+Generation 6 : 82.5600764811
+Generation 7 : 82.5600764811
+Generation 8 : 82.5600764811
+Generation 9 : 82.5600764811
+Generation 10 : 82.5600764811
+Generation 11 : 79.5786663462
+Generation 12 : 68.9076297341
+Generation 13 : 68.9076297341
+Generation 14 : 68.9076297341
+Generation 15 : 68.9076297341
+Generation 16 : 68.9076297341
+Generation 17 : 68.9076297341
+Generation 18 : 46.6950761075
+Generation 19 : 46.6950761075
+Generation 20 : 46.6950761075
+Generation 21 : 46.6950761075
+Generation 22 : 46.6950761075
+Generation 23 : 46.6950761075
+Generation 24 : 46.6950761075
+Generation 25 : 46.6950761075
+Generation 26 : 46.6950761075
+Generation 27 : 46.6950761075
+Generation 28 : 46.6950761075
+Generation 29 : 46.6950761075
+Generation 30 : 46.6950761075
+Generation 31 : 46.6950761075
+Generation 32 : 27.3264415759
+Generation 33 : 27.3264415759
+Generation 34 : 27.3264415759
+Generation 35 : 27.3264415759
+* 
+/ / 
++ 3 * + 
+-3 0 + + * * 
++ 3 * * * * + x 
+/ x / / / x + x x / -3 0 
+4 -5 + x 0 / x 0 -3 + x * 
+x * x * * + + x 
+* / * x / x / / x x 
+/ x / / x x x / 2 5 x * 
+x / 2 x x / -5 + x * 
+-5 + x * -5 x -3 -4 
+3 x -3 x 
+ 27.3264415759
+ATTEMPT 4
+Generation 1 : 84.8911821751
+Generation 2 : 84.8911821751
+Generation 3 : 50.7094122628
+Generation 4 : 48.8964098557
+Generation 5 : 35.4001580218
+Generation 6 : 35.4001580218
+Generation 7 : 35.4001580218
+Generation 8 : 35.4001580218
+Generation 9 : 35.4001580218
+Generation 10 : 35.4001580218
+Generation 11 : 35.4001580218
+Generation 12 : 35.4001580218
+Generation 13 : 34.5060398298
+Generation 14 : 30.6451623081
+Generation 15 : 23.5563017944
+Generation 16 : 23.5563017944
+Generation 17 : 23.5563017944
+Generation 18 : 23.5563017944
+Generation 19 : 10.531754987
+Generation 20 : 10.531754987
+Generation 21 : 10.531754987
+Generation 22 : 10.531754987
+Generation 23 : 9.97224939281
+Generation 24 : 9.97224939281
+Generation 25 : 9.97224939281
+Generation 26 : 9.97224939281
+Generation 27 : 9.97224939281
+Generation 28 : 9.97224939281
+Generation 29 : 9.97224939281
+Generation 30 : 9.97224939281
+Generation 31 : 9.97224939281
+Generation 32 : 9.97224939281
+Generation 33 : 9.97224939281
+Generation 34 : 9.97224939281
+Generation 35 : 9.97224939281
+* 
+/ x 
+3 * 
+* * 
+x 3 * x 
++ + 
++ + x -3 
+/ * -2 1 
+-1 x + -3 
+5 * 
+-3 -2 
+ 9.97224939281
+ATTEMPT 5
+Generation 1 : 96.3027475504
+Generation 2 : 96.3027475504
+Generation 3 : 96.3027475504
+Generation 4 : 96.3027475504
+Generation 5 : 96.3027475504
+Generation 6 : 96.3027475504
+Generation 7 : 96.3027475504
+Generation 8 : 96.3027475504
+Generation 9 : 96.3027475504
+Generation 10 : 96.3027475504
+Generation 11 : 96.3027475504
+Generation 12 : 96.3027475504
+Generation 13 : 96.3027475504
+Generation 14 : 96.3027475504
+Generation 15 : 96.3027475504
+Generation 16 : 96.3027475504
+Generation 17 : 95.3094864994
+Generation 18 : 89.9525830427
+Generation 19 : 85.3865293291
+Generation 20 : 83.8360416879
+Generation 21 : 61.7709315312
+Generation 22 : 61.7709315312
+Generation 23 : 61.7709315312
+Generation 24 : 61.7709315312
+Generation 25 : 61.7709315312
+Generation 26 : 61.7709315312
+Generation 27 : 61.7709315312
+Generation 28 : 61.4501877781
+Generation 29 : 61.4501877781
+Generation 30 : 61.4501877781
+Generation 31 : 61.4501877781
+Generation 32 : 61.4501877781
+Generation 33 : 61.4501877781
+Generation 34 : 61.4501877781
+Generation 35 : 61.4501877781
+* 
++ / 
++ -3 / + 
+/ / * * * + 
+* x + / * -1 2 x / x + * 
+3 2 * 2 + + / x x 5 / -1 * + 
+3 x / + * / + / 0 5 + * + * 
+/ -1 4 x x 5 + -4 0 x * / / x x x x 1 + -4 
+/ 0 / / * * x + + x + / 
++ * * x + * 3 + -3 1 * / + + + x / * 
+x -2 / + + + / x * + / -1 + x -1 / x 2 * / + + + x / / 
++ * x * * / 0 * * / * + / 2 -4 x -4 x -4 -5 * + x + + * -5 + * / / + + -1 
+-4 + 5 0 * / -5 * / * x x x -4 3 x x -5 x * / x -4 / x -2 + * x * / + 0 5 3 -5 x x 2 1 x + * x 
+* 4 / x -3 * -3 + * x / -5 * / / x + x * x x / 5 / * x * x / * + x 
+2 5 x -3 -2 x -2 x 0 5 x x x x x 1 x x -1 5 -2 x -2 -5 x x -4 x -5 x x 4 x x x x 
+ 61.4501877781
+ATTEMPT 6
+Generation 1 : 106.562377881
+Generation 2 : 105.092804196
+Generation 3 : 104.206723284
+Generation 4 : 104.206723284
+Generation 5 : 101.118066954
+Generation 6 : 101.118066954
+Generation 7 : 92.9861663612
+Generation 8 : 92.1706379597
+Generation 9 : 92.1706379597
+Generation 10 : 92.1706379597
+Generation 11 : 92.1706379597
+Generation 12 : 90.5109033463
+Generation 13 : 85.3124528757
+Generation 14 : 85.3124528757
+Generation 15 : 84.3709483283
+Generation 16 : 71.9808690476
+Generation 17 : 70.4489770433
+Generation 18 : 70.4489770433
+Generation 19 : 49.9718366108
+Generation 20 : 49.9718366108
+Generation 21 : 49.9718366108
+Generation 22 : 49.9718366108
+Generation 23 : 49.9718366108
+Generation 24 : 49.9718366108
+Generation 25 : 49.9273648325
+Generation 26 : 49.9273648325
+Generation 27 : 49.9273648325
+Generation 28 : 49.9273648325
+Generation 29 : 49.9273648325
+Generation 30 : 49.9273648325
+Generation 31 : 49.9273648325
+Generation 32 : 49.9273648325
+Generation 33 : 49.9273648325
+Generation 34 : 49.9273648325
+Generation 35 : 25.8197793586
+/ 
+-3 / 
+x / 
+x + 
+-3 + 
+* x 
+4 * 
+x * 
+* x 
+/ / 
+/ 5 x * 
+x x x -4 
+ 25.8197793586
+ATTEMPT 7
+Generation 1 : 91.085311759
+Generation 2 : 91.085311759
+Generation 3 : 88.8692211461
+Generation 4 : 83.1441872831
+Generation 5 : 80.6763024441
+Generation 6 : 67.1862557809
+Generation 7 : 67.1862557809
+Generation 8 : 62.4264363662
+Generation 9 : 62.4264363662
+Generation 10 : 53.8488685774
+Generation 11 : 52.7403091076
+Generation 12 : 42.7371628104
+Generation 13 : 42.7371628104
+Generation 14 : 42.7371628104
+Generation 15 : 42.7371628104
+Generation 16 : 42.7371628104
+Generation 17 : 42.7371628104
+Generation 18 : 42.7371628104
+Generation 19 : 42.7371628104
+Generation 20 : 40.5455984926
+Generation 21 : 31.7931440523
+Generation 22 : 31.2637947569
+Generation 23 : 31.2637947569
+Generation 24 : 30.8133202592
+Generation 25 : 30.8133202592
+Generation 26 : 30.6199548502
+Generation 27 : 30.6199548502
+Generation 28 : 30.6199548502
+Generation 29 : 30.6199548502
+Generation 30 : 30.6199548502
+Generation 31 : 30.6199548502
+Generation 32 : 30.6199548502
+Generation 33 : 30.6199548502
+Generation 34 : 30.6199548502
+Generation 35 : 30.6199548502
+/ 
+/ * 
+-5 + + / 
++ / / / + 4 
+* / x -4 * + / x + 0 
++ * + 4 x / * / * + 5 4 
+/ + + x + -2 + x / + / x * + + 1 
+* + + 4 + -2 5 -4 + -2 -2 * -1 / + -2 x / * / x x 
+x / * / / + 3 1 5 4 + -5 0 / 5 4 + 4 / * / x 
++ 4 / * * x * * + x * / 2 / + x -2 / -1 * + -2 
++ x -2 / -1 / + -2 x / * / x x * / x x * * x 4 + -5 x * 5 4 
+-5 4 * 0 x / 5 -5 + 4 + * / x x x * -5 + x * x + / 2 / 
++ + 2 / + -2 -2 / -1 / + -2 0 x 2 + / x / / x x * * 
+/ / x x * * 5 4 + -5 x / 5 4 -2 x 5 x x x * -5 + x * x 
+3 -4 * -3 + x * x + / 2 / 0 x 2 / + x 
+0 x 2 / / 4 / / x x / * -2 x 5 x 
+x x 5 x x x * x + x * x 
+0 1 2 / / -5 
+x x 5 4 
+ 30.6199548502
+ATTEMPT 8
+Generation 1 : 97.9773245548
+Generation 2 : 87.3713943665
+Generation 3 : 70.8160269662
+Generation 4 : 64.8717834614
+Generation 5 : 64.8717834614
+Generation 6 : 63.116268532
+Generation 7 : 62.1850685125
+Generation 8 : 57.2731364331
+Generation 9 : 53.0460465837
+Generation 10 : 51.5036522679
+Generation 11 : 51.5036522679
+Generation 12 : 51.5036522679
+Generation 13 : 51.5036522679
+Generation 14 : 51.5036522679
+Generation 15 : 51.5036522679
+Generation 16 : 48.6371822054
+Generation 17 : 48.6371822054
+Generation 18 : 48.4332417445
+Generation 19 : 48.4332417445
+Generation 20 : 47.3357680816
+Generation 21 : 47.3357680816
+Generation 22 : 47.3357680816
+Generation 23 : 47.3357680816
+Generation 24 : 47.3357680816
+Generation 25 : 47.3357680816
+Generation 26 : 47.3357680816
+Generation 27 : 46.8071784708
+Generation 28 : 32.5927123481
+Generation 29 : 31.7018529325
+Generation 30 : 31.7018529325
+Generation 31 : 30.7754336127
+Generation 32 : 30.6130592647
+Generation 33 : 26.2831041348
+Generation 34 : 26.2683099809
+Generation 35 : 24.7356014821
+/ 
++ + 
++ * + + 
++ * x 4 + + + + 
++ / x 4 + + x x + / + / 
++ * + x x / x x + / x x + / + x 
+x / + / * 5 x x -3 * + x + / x x * 4 
+x x + 1 + x + -1 + / * 5 -3 + + x + -1 
+x / + 4 -3 + + 1 + x + -1 + / * 4 -3 + 
+x / x -1 + / x / * 4 -3 + * 1 + x + -1 + / 
+x x * 1 / x x / x -1 * / x / * 4 -3 + * 1 + x 
+x / + 4 x x * 1 + x x / x -1 + / x / * 4 
+0 / -4 2 x / * 4 1 x * 1 + x x / x -1 
+1 x x / -4 2 x / * 4 1 x 
+1 x x / x -1 
+1 x 
+ 20.8556875443
+ATTEMPT 9
+Generation 1 : 105.714236295
+Generation 2 : 90.4403721386
+Generation 3 : 85.4538499316
+Generation 4 : 72.519788288
+Generation 5 : 72.1363846063
+Generation 6 : 68.5014404595
+Generation 7 : 64.2220719099
+Generation 8 : 59.5036559698
+Generation 9 : 57.5837652008
+Generation 10 : 46.9197416275
+Generation 11 : 46.9197416275
+Generation 12 : 45.1562300258
+Generation 13 : 27.6533688748
+Generation 14 : 27.6533688748
+Generation 15 : 27.1438376308
+Generation 16 : 27.1438376308
+Generation 17 : 26.7205625687
+Generation 18 : 26.7205625687
+Generation 19 : 26.7205625687
+Generation 20 : 26.1142151144
+Generation 21 : 26.1142151144
+Generation 22 : 26.1142151144
+Generation 23 : 26.1142151144
+Generation 24 : 19.7620447139
+Generation 25 : 19.7620447139
+Generation 26 : 19.7620447139
+Generation 27 : 19.7620447139
+Generation 28 : 19.7620447139
+Generation 29 : 19.7620447139
+Generation 30 : 19.7620447139
+Generation 31 : 19.7620447139
+Generation 32 : 19.7620447139
+Generation 33 : 19.7620447139
+Generation 34 : 19.7620447139
+Generation 35 : 19.7620447139
+/ 
+-4 + 
++ 0 
++ x 
++ -5 
+/ x 
++ -3 
+* -1 
++ x 
+x 1 
+ 19.7620447139
+ATTEMPT 10
+Generation 1 : 108.637127844
+Generation 2 : 107.994668815
+Generation 3 : 107.994668815
+Generation 4 : 103.984057035
+Generation 5 : 103.984057035
+Generation 6 : 103.984057035
+Generation 7 : 103.984057035
+Generation 8 : 102.789641055
+Generation 9 : 96.2111743939
+Generation 10 : 96.2111743939
+Generation 11 : 96.2111743939
+Generation 12 : 96.2111743939
+Generation 13 : 96.2111743939
+Generation 14 : 96.2111743939
+Generation 15 : 96.2111743939
+Generation 16 : 96.2111743939
+Generation 17 : 94.6957486777
+Generation 18 : 71.6541168187
+Generation 19 : 70.6519369502
+Generation 20 : 70.6519369502
+Generation 21 : 70.6519369502
+Generation 22 : 70.6519369502
+Generation 23 : 70.2486414372
+Generation 24 : 70.2486414372
+Generation 25 : 54.2252905978
+Generation 26 : 54.2252905978
+Generation 27 : 54.2252905978
+Generation 28 : 54.2252905978
+Generation 29 : 51.2777506166
+Generation 30 : 51.2777506166
+Generation 31 : 51.2777506166
+Generation 32 : 51.2777506166
+Generation 33 : 51.0384586785
+Generation 34 : 51.0384586785
+Generation 35 : 51.0384586785
+* 
+/ -4 
+-4 * 
++ 2 
+/ * 
+-4 -1 / * 
+5 5 x + 
++ + 
+/ -2 * x 
+4 + x * 
+0 x 0 x 
+ 51.0384586785
+And the winner is....
+/ 
++ + 
+4 + + + 
+5 / 5 * + + 
+3 3 x -3 5 * 4 * 
+x -3 x x 
+
+Training error: 1.3370814872e-14
+Test error: 3.33240379735e-15

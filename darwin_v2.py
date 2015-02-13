@@ -109,6 +109,8 @@ def experiment(population_size, depth_limit, terminal_bound, reproduction_rate,
     best_error = maxint
     for tree in winners:
         test_error = tree.return_error(x_test, y_test)
+        print tree
+        print tree.error, test_error
         if test_error < best_error:
             best_error = test_error
             best_tree = tree
