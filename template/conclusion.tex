@@ -1,0 +1,21 @@
+
+\section{Conclusions}
+\label{sec:concl}
+
+We began with the goal of developing a program that could estimate a
+function using Symbolic Regression analysis for two different
+datasets. We used standard genetic programming practices to evolve
+random functions into reasonable estimates of a function for each
+dataset. The most notable aspects of our program are: the initial
+population size of [fill in], reproduction rate of 10\%, a point
+mutation rate of 40\% in 10\% of each population, and random crossing
+over between individuals selected by tournament selection.\\
+
+We inconsistently discovered a function for the first data set with a
+nearly non-existent margin of error on both the training set and the
+test set, however, we were unable to generate any reasonable estimates
+at a function for the second set of data. Given our results, we
+believe our program is only capable of estimating single variable
+functions with any reliable accuracy. \\
+
+In future experiments, a larger generation size and a greater number of generations should be used to evolve a solution. Additionally, a secondary selection criterion similar to the order of nonlinearity selection proposed by Vladislavleva et al would be beneficial for more accurate estimations, especially for multivariable functions \cite{Vladislavleva:2009:ONC:1650356.1650365}. 

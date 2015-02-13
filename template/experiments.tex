@@ -1,0 +1,91 @@
+
+\section{Experiments}
+\label{sec:expts}
+
+	To perform Symbolic Regression with genetic programming on the
+        data from Generator 1, we began with a population of 1,000
+        randomly generated expression trees. The interior nodes of the
+        trees were randomly selected from the set of valid operators,
+        {+, *, /}. The leaf nodes of the trees were randomly selected
+        from the set of valid terminals, consisting of the variable x
+        and integer constants from -5 to 5. In order to reduce the
+        number of constant trees (that is, trees that evaluated to a
+        constant function), we chose that the variable x would be
+        chosen with 50\% probability and a random choice from the set
+        of integer constants would be chosen the remainder of the
+        time. The problem at hand stated that the underlying function
+        in Generator 1 used the operations +, -, *, /, and integer
+        powers of x, but as a design consideration we chose to omit
+        the operations – and exponentiation. We were able to do so
+        because integer powers of x can be expressed through repeated
+        multiplication, and subtraction is the addition of negative
+        numbers, which are valid as terminals. Omitting these two
+        operations greatly reduced the complexity of the trees
+        produced by the algorithm, making it far more likely to
+        produce an equation that would generalize well.\\
+
+	To make a random tree, we began with a random operator node at
+        the root and a predetermined depth limit of 10. We then built
+        the rest of the tree recursively. Each node generated had a
+        50\% chance of being a random terminal and ending that branch
+        of the tree, or being a random operator. If the tree ever
+        reached the depth limit, all new nodes were made to be
+        terminals.\\
+
+	Once the initial population was generated, we applied the
+        genetic programming algorithm. We allowed the algorithm to run
+        for 35 generations, with the possibility of early termination
+        if any tree’s error was less than 0.2. To calculate error, we
+        accumulated the absolute value of the difference between the
+        tree’s evaluation of a given x and the actual value, f(x). We
+        chose this method over the least squares method because, like
+        least squares, it never allows for negative error, but it also
+        limits the possibility of the total error getting too large
+        and causing an overflow.\\
+
+	We use three different methods to generate a new
+        generation. Firstly, the fittest 10\% of the population are
+        duplicated into the next generation. This technique, called
+        reproduction, ensures that every generation is at least as
+        good as the preceding generation (field guide). Secondly, we
+        mutated 10\% of the population. When a tree was selected for
+        mutation, we traversed the tree, changing the current node
+        40\% of the time. Terminals were only ever changed to other
+        terminals, and operators to other operators. We determined the
+        40\% node mutation rate through trial and error. Mutation
+        occurred in place, so once a tree was mutated, it was still
+        available to be picked for crossover. In another effort to
+        keep diversity high, we used a tournament selection algorithm
+        to select individuals for crossover. In tournament selection,
+        we randomly select 10\% of the population and choose the
+        fittest individual of those 10\% (the winner of the
+        tournament). This probabilistically chose fitter individuals
+        more frequently, but left open the possibility of a relatively
+        unfit individual being chosen. When crossing over, we randomly
+        selected a node in each tree and swapped the subtrees rooted
+        at the nodes. To prevent overfitting, if the result of a
+        crossover was too deep, we removed that individual and
+        injected a new, random individual into the population. This
+        limits the effects of overfitting by removing overly complex
+        hypotheses and also contributed to diversity by adding random
+        individuals periodically (Gupta). We implemented a dynamic
+        depth limit, where we defined “too deep” as deeper than the
+        fittest individual in the generation. We then continued
+        crossing two trees until the new generation had the same
+        number of individuals as the previous.\\
+
+	When evaluating the trees, we split the initial dataset into a
+        training set, containing roughly 80\% of the data, and a test
+        set containing roughly 20\%. To divide the data, we generated
+        a random number for each x value and assigned it and its
+        corresponding f(x) value to either test or training depending
+        on the value of the random number.\\
+
+	After 35 generations, or when a tree’s error dropped below
+        0.2, we selected the fittest tree to be saved for comparison
+        against the test set. We ran this process ten times to produce
+        ten different winners. The final answer was the winner who
+        performed best over the test data, giving us and estimate of
+        the underlying equation behind the dataset.
+
+
