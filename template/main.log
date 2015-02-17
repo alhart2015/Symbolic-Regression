@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  16 FEB 2015 20:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  16 FEB 2015 22:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -375,7 +375,11 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 137.
 )
-(./main.aux)
+(./main.aux
+
+LaTeX Warning: Label `fig:tex' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 62.
@@ -515,32 +519,62 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
+Underfull \hbox (badness 1484) in paragraph at lines 6--7
+\OT1/ppl/m/n/9 one vari-able, but re-quires fur-ther op-ti-miza-tion for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
 ) (./intro.tex
-Underfull \hbox (badness 1874) in paragraph at lines 7--11
+Underfull \hbox (badness 1874) in paragraph at lines 7--10
 \OT1/ppl/m/n/10 know-ing why it's right, have you re-ally learned
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--11
+Underfull \hbox (badness 10000) in paragraph at lines 7--10
 
  []
 
 ) (./background.tex
-Underfull \hbox (badness 10000) in paragraph at lines 5--7
+Underfull \hbox (badness 2173) in paragraph at lines 4--5
+\OT1/ppl/m/n/10 GP bor-rows sev-eral ma-jor ideas from Dar-winian
+ []
+
+
+Underfull \hbox (badness 1596) in paragraph at lines 4--5
+\OT1/ppl/m/n/10 evo-lu-tion that in-flu-ence the ac-cu-racy of sym-bolic
+ []
+
+
+Underfull \hbox (badness 1231) in paragraph at lines 4--5
+\OT1/ppl/m/n/10 be con-sid-ered when ap-ply-ing a ge-netic al-go-rithm
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--10
-
+Underfull \hbox (badness 2469) in paragraph at lines 6--8
+\OT1/ppl/m/n/10 For GP to func-tion op-ti-mally, the pop-u-la-tion of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--13
+Underfull \hbox (badness 1881) in paragraph at lines 6--8
+\OT1/ppl/m/n/10 in-di-vid-u-als must be di-verse. With-out a di-verse
+ []
+
+
+Underfull \hbox (badness 2005) in paragraph at lines 6--8
+\OT1/ppl/m/n/10 re-com-bi-nant in-di-vid-u-als are very sim-i-lar to their
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--8
 
  []
 
@@ -549,48 +583,73 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--13
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 14--17
+Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
  []
 
 
-Underfull \hbox (badness 8170) in paragraph at lines 18--23
-\OT1/ppl/m/n/10 strat-egy to pre-vent overly com-plex hy-pothe-ses
+Underfull \hbox (badness 10000) in paragraph at lines 12--14
+
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 18--23
-\OT1/ppl/m/n/10 train-ing er-ror. In ad-di-tion to lim-it-ing the depth,
+Underfull \hbox (badness 1082) in paragraph at lines 15--18
+\OT1/ppl/m/n/10 them be-tween the two in-di-vid-u-als. We chose to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--23
+Underfull \hbox (badness 1466) in paragraph at lines 15--18
+\OT1/ppl/m/n/10 to pro-mote unique tree re-combinations. This is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--18
+
+ []
+
+
+Underfull \hbox (badness 1184) in paragraph at lines 19--21
+\OT1/ppl/m/n/10 ge-netic mo-tifs into the pop-u-la-tion. Of-ten, ini-tial
+ []
+
+
+Underfull \hbox (badness 3312) in paragraph at lines 19--21
+\OT1/ppl/m/n/10 lose a nec-es-sary part through ran-dom se-lec-tion.
+ []
+
+
+Underfull \hbox (badness 1137) in paragraph at lines 19--21
+\OT1/ppl/m/n/10 nodes to dif-fer-ent op-er-a-tions or al-tered the value
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--21
 
  []
 
 ) (./experiments.tex
+Underfull \hbox (badness 8170) in paragraph at lines 22--1
+\OT1/ppl/m/n/10 strat-egy to pre-vent overly com-plex hy-pothe-ses
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--1
+
+ []
+
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ì in font pplr7t!
-
-Underfull \hbox (badness 1226) in paragraph at lines 5--26
-\OT1/ppl/m/n/10 of the trees were ran-domly se-lected from the set
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 5--26
 
  []
 
-
+[2]
 Underfull \hbox (badness 10000) in paragraph at lines 27--34
 
  []
 
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ô in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ô in font pplr7t!
 
@@ -599,25 +658,32 @@ Underfull \hbox (badness 2065) in paragraph at lines 35--45
  []
 
 
-Underfull \hbox (badness 1400) in paragraph at lines 35--45
-\OT1/ppl/m/n/10 ap-plied the ge-netic pro-gram-ming al-go-rithm. We
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 35--45
 
  []
 
-[2]
-Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ú in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ù in font pplr7t!
 
-Underfull \hbox (badness 1052) in paragraph at lines 46--76
-\OT1/ppl/m/n/10 called re-pro-duc-tion, en-sures that ev-ery gen-er-a-tion
+Underfull \hbox (badness 1158) in paragraph at lines 46--76
+\OT1/ppl/m/n/10 tech-nique, called re-pro-duc-tion, en-sures that ev-ery
+ []
+
+
+Underfull \hbox (badness 1668) in paragraph at lines 46--76
+\OT1/ppl/m/n/10 mu-ta-tion rate through trial and er-ror. Mu-ta-tion
+ []
+
+
+Underfull \hbox (badness 1337) in paragraph at lines 46--76
+\OT1/ppl/m/n/10 In tour-na-ment se-lec-tion, we ran-domly se-lect 10%
+ []
+
+
+Underfull \hbox (badness 2158) in paragraph at lines 46--76
+\OT1/ppl/m/n/10 prob-a-bilis-ti-cally chose fit-ter in-di-vid-u-als more fre-
  []
 
 
@@ -635,45 +701,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--83
 
  []
 
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ô in font pplr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--90
+
+ []
+
 ) (./results.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--10
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--18
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
-
- []
-
-<figs/Generator1.jpg, id=15, 1606.0pt x 1204.5pt>
+<figs/Generator1.jpg, id=16, 1606.0pt x 1204.5pt>
 File: figs/Generator1.jpg Graphic file (type jpg)
  <use figs/Generator1.jpg>
-Package pdftex.def Info: figs/Generator1.jpg used on input line 27.
+Package pdftex.def Info: figs/Generator1.jpg used on input line 17.
 (pdftex.def)             Requested size: 252.94499pt x 189.70975pt.
 
-Overfull \hbox (13.55061pt too wide) in paragraph at lines 27--28
+Overfull \hbox (13.55061pt too wide) in paragraph at lines 17--18
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--37
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 38--39
+
+ []
+
+<figs/ThreeVariables.jpg, id=20, 1606.0pt x 1204.5pt>
+File: figs/ThreeVariables.jpg Graphic file (type jpg)
+
+<use figs/ThreeVariables.jpg>
+Package pdftex.def Info: figs/ThreeVariables.jpg used on input line 46.
+(pdftex.def)             Requested size: 252.94499pt x 189.70975pt.
+
+Overfull \hbox (13.55061pt too wide) in paragraph at lines 46--47
  [][] 
  []
 
 ) (./conclusion.tex
-Underfull \hbox (badness 2334) in paragraph at lines 4--12
-\OT1/ppl/m/n/10 ge-netic pro-gram-ming prac-tices to evolve ran-dom
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 4--12
 
  []
 
-[3 <./figs/Generator1.jpg>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 13--20
 
  []
@@ -683,30 +757,34 @@ Underfull \hbox (badness 4013) in paragraph at lines 22--28
 []\OT1/ppl/m/n/10 Poli, R.; Lang-don, W. B.; and McPhee, N. F.
  []
 
-) [4
+[4 <./figs/Generator1.jpg> <./figs/ThreeVariables.jpg>]) [5
 
-] (./main.aux) ) 
+] (./main.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4619 strings out of 493117
- 62543 string characters out of 6135433
- 132586 words of memory out of 5000000
- 7908 multiletter control sequences out of 15000+600000
+ 4624 strings out of 493117
+ 62672 string characters out of 6135433
+ 133625 words of memory out of 5000000
+ 7912 multiletter control sequences out of 15000+600000
  36481 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,12n,24p,1194b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc
-}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/
-local/texlive/2014/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/t
-exlive/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2
-014/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2014/tex
-mf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist
-/fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2014/texmf-dist/fonts
-/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw
-/times/utmri8a.pfb>
-Output written on main.pdf (4 pages, 190412 bytes).
+ 38i,12n,24p,1317b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2014/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/
+2014/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2014/te
+xmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2014/texmf-dist
+/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/
+type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/u
+rw/palatino/uplri8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/tim
+es/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a
+.pfb>
+Output written on main.pdf (5 pages, 334802 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
- 35 compressed objects within 1 object stream
+ 55 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

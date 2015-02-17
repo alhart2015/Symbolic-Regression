@@ -3,16 +3,16 @@
 
 We began with the goal of developing a program that could estimate a
 function using Symbolic Regression analysis for two different
-datasets. We used standard genetic programming practices to evolve
+datasets. We used standard GP practices to evolve
 random functions into reasonable estimates of a function for each
-dataset. The most notable aspects of our program are: the initial
+dataset. The most notable aspects of our program are the initial
 population size of 1000, reproduction rate of 10\%, a point
 mutation rate of 40\% in 10\% of each population, and random crossing
 over between individuals selected by tournament selection.\\
 
-Over all the independent runs on the dataset from Generator 1, we only
-converged on a function with non-existant error for the test set and
-training set once. However, our algorithm never found a function for
+After all the independent runs on the dataset from Generator 1, we successfully
+converged on a function with negligible error for the test set and
+training set. However, our algorithm never found a function for
 the three variable dataset with an absolute error less than 400
 million. Given our results, we
 believe our program is only capable of estimating single variable

@@ -2,7 +2,7 @@
 \section{Experiments}
 \label{sec:expts}
 
-	To perform Symbolic Regression with genetic programming on the
+	To perform Symbolic Regression with GP on the
         data from Generator 1, we began with a population of 1,000
         randomly generated expression trees. An expression tree is a binary tree representing an expression that can be evaluated. The interior nodes of the tree can be any valid operation in the given language, and the leaf nodes can be any valid terminal, such as a constant or a variable name. Programming languages use expression trees to parse arithmetic and boolean expressions. In this case, the interior nodes of the
         trees were randomly selected from the set of valid operators,
@@ -10,7 +10,7 @@
         from the set of valid terminals, consisting of the variable x
         and integer constants from -5 to 5. In order to reduce the
         number of constant trees (that is, trees that evaluated to a
-        constant function), we chose that the variable x would be
+        constant function), we decided that the variable x would be
         chosen with 50\% probability and a random choice from the set
         of integer constants would be chosen the remainder of the
         time. The problem at hand stated that the underlying function
@@ -33,21 +33,21 @@
         terminals.\\
 
 	Once the initial population was generated, we applied the
-        genetic programming algorithm. We allowed the algorithm to run
+        GP algorithm. We allowed the algorithm to run
         for 35 generations, with the possibility of early termination
-        if any tree‚Äôs error was less than 0.2. To calculate error, we
+        if any tree's error was less than 0.2. To calculate error, we
         accumulated the absolute value of the difference between the
-        tree‚Äôs evaluation of a given x and the actual value, f(x). We
-        chose this method over the least squares method because, like
-        least squares, it never allows for negative error, but it also
+        tree'Äôs evaluation of a given x and the actual value, f(x). We
+        chose this method over the squared error method because, like
+        squared error, it never allows for negative error, but it also
         limits the possibility of the total error getting too large
         and causing an overflow.\\
 
-	We use three different methods to generate a new
-        generation. Firstly, the fittest 10\% of the population are
+	We used three different methods to generate a new
+        generation. Firstly, the fittest 10\% of the population were
         duplicated into the next generation. This technique, called
         reproduction, ensures that every generation is at least as
-        good as the preceding generation (field guide). Secondly, we
+        good as the preceding generation \cite{poli08:fieldguide}. Secondly, we
         mutated 10\% of the population. When a tree was selected for
         mutation, we traversed the tree, changing the current node
         40\% of the time. Terminals were only ever changed to other
@@ -68,8 +68,8 @@
         injected a new, random individual into the population. This
         limits the effects of overfitting by removing overly complex
         hypotheses and also contributed to diversity by adding random
-        individuals periodically (Gupta). We implemented a dynamic
-        depth limit, where we defined ‚Äútoo deep‚Äù as deeper than the
+        individuals periodically \cite{Gupta_anoverview}. We implemented a dynamic
+        depth limit, where we defined "Äútoo deep"Äù as deeper than the
         fittest individual in the generation. We then continued
         crossing two trees until the new generation had the same
         number of individuals as the previous.\\
@@ -81,11 +81,13 @@
         corresponding f(x) value to either test or training depending
         on the value of the random number.\\
 
-	After 35 generations, or when a tree‚Äôs error dropped below
+	After 35 generations, or when a tree's error dropped below
         0.2, we selected the fittest tree to be saved for comparison
         against the test set. We ran this process ten times to produce
         ten different winners. The final answer was the winner who
-        performed best over the test data, giving us and estimate of
-        the underlying equation behind the dataset.
+        performed best over the test data, giving us an estimate of
+        the underlying equation behind the dataset.\\
+        
+        We then adapted our program to handle the function of three variables. We pared the original 100,000 point dataset down to a training and test set, each consisting of 50,000 randomly chosen points. We then performed the same algorithm, generating and evolving populations of trees for 35 generations or until a suitably accurate tree was found.
 
 

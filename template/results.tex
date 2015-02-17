@@ -8,11 +8,30 @@ data varied very little outside the range [-50, 50], so we
 considered x-values from [-50,50] in increments of 0.1, and
 their corresponding y-values.\\
 
+\begin{figure}[htb]
+
+  \centering  % centers the image in the column
+
+  % replace the second argument below with your filename. I like to
+  % place all my figures in a sub-directory to keep things organized
+  \includegraphics[width=0.5\textwidth]{figs/Generator1.jpg}
+
+  % *Every* figure should have a descriptive caption.
+  \caption{\emph{This figure depicts the best absolute error score for each
+    generation of several genetic programming runs. Each of the runs
+    depicted were the best runs of a full experimental run of 10 runs of
+    genetic programming.}}
+
+
+  \label{fig:tex}
+
+\end{figure}
+
 Our algorithm produced spectacular results, finding an equation for
-the Generator 1 data with less than 5 x 10-15 total error on the test
+the Generator 1 data with less than 5x$10^{-15}$ total error on the test
 set. When evolving, this tree took 19 generations to be formed. After
 19 generations, the equation  $$\frac{10}{x^2-6x+14}$$  had a total error of
-less than 2x10-14 when evaluated on the test set, as stated above, the
+less than 2x$10^{-14}$. When evaluated on the test set, as stated above, the
 error was similarly low. This indicates that the equation generalizes
 well and was not overfit to the training data.\\
 
@@ -24,16 +43,18 @@ After ten runs of GP, we had ten trees that were each the best in that iteration
 
   % replace the second argument below with your filename. I like to
   % place all my figures in a sub-directory to keep things organized
-  \includegraphics[width=0.5\textwidth]{figs/Generator1.jpg}
+  \includegraphics[width=0.5\textwidth]{figs/ThreeVariables.jpg}
 
   % *Every* figure should have a descriptive caption.
-  \caption{This figure depicts the best ablsolute error score for each
-    generation of several genetic programming runs. Each of the runs
-    depicted were the best runs of a full experimental run of 10 runs of
-    genetic programming.}
+  \caption{\emph{This figure depicts the best absolute error score for the most successful of several genetic programming runs on the function of three variables. This function, whose final absolute error was 482,242,791.986, was the most accurate of 10 iterations of the algorithm.}}
 
 
   \label{fig:tex}
 
 \end{figure}
+
+When applied to the function of three variables, our algorithm was significantly less successful. Our most accurate attempt yielded the equation $$\frac{4z^4+36z^3+68yz^2+60z^2+60yz-84z+80}{yz-y}$$
+
+ which had a total error of 482,242,791.986. The underlying data, however, behaved asymptotically. This brief trend towards both positive and negative infinity could dramatically affect the error of any function that did not match this behavior identically. It is possible that the absolute error does not reflect the true accuracy of our generated function. 
+
 
