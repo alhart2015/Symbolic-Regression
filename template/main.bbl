@@ -1,10 +1,30 @@
 \begin{thebibliography}{}
 
-\bibitem[\protect\citeauthoryear{Russell and Norvig}{2003}]{aima}
-Russell, S.~J., and Norvig, P.
+\bibitem[\protect\citeauthoryear{Becker and Seshadri}{2003}]{Overfitting}
+Becker, L.~A., and Seshadri, M.
 \newblock 2003.
-\newblock {\em {Artificial Intelligence: A Modern Approach}}.
-\newblock Pearson Education.
+\newblock {Comprehensibility and Overfitting Avoidance in Genetic Programming for
+  Technical Trading Rules}.
+\newblock {\em Digital Commons @ Worcester Polytechnic Institute}.
+
+\bibitem[\protect\citeauthoryear{Gupta and Ghafir}{2003}]{Gupta_anoverview}
+Gupta, D., and Ghafir, S.
+\newblock 2003.
+\newblock An overview of methods maintaining diversity in genetic algorithms.
+
+\bibitem[\protect\citeauthoryear{Koza}{1997}]{Koza97geneticprogramming}
+Koza, J.~R.
+\newblock 1997.
+\newblock Genetic programming.
+
+\bibitem[\protect\citeauthoryear{Poli, Langdon, and
+  McPhee}{2008}]{poli08:fieldguide}
+Poli, R.; Langdon, W.~B.; and McPhee, N.~F.
+\newblock 2008.
+\newblock {\em A field guide to genetic programming}.
+\newblock Published via \texttt{http://lulu.com} and freely available at
+  \texttt{http://www.gp-field-guide.org.uk}.
+\newblock (With contributions by J. R. Koza).
 
 \bibitem[\protect\citeauthoryear{Vladislavleva, Smits, and
   Den~Hertog}{2009}]{Vladislavleva:2009:ONC:1650356.1650365}

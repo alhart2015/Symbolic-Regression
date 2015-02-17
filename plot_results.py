@@ -4,7 +4,7 @@ Script to plot results of our experiments.
 
 from matplotlib import pyplot as plt
 
-generations = range(1, 36)
+generations = range(1, 21)
 errors1 = [ 97.8744310971,
             90.3661240419,
             77.8403112608,
@@ -23,7 +23,7 @@ errors1 = [ 97.8744310971,
             15.3422795504,
             11.0198406518,
             9.17610129941,
-            1.51324265618e-14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+            1.51324265618e-14,0]
 
 errors2 = [94.8936532896,
 72.1905151233,
@@ -44,7 +44,7 @@ errors2 = [94.8936532896,
  3.6212375948,
  3.6212375948,
  3.6212375948,
- 1.3370814872e-14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+ 1.3370814872e-14]
 
 # errors2 = [102.149671868,
 # 89.5210529639,
@@ -190,9 +190,12 @@ errors2 = [94.8936532896,
 # 70.5632480013,
 # 70.5632480013]
 
-plt.plot(generations, errors1, 's',
-        generations, errors2, '^')
-plt.title('Error Over Time')
+plt.plot(generations, errors1, 's', label='Trial 1')
+plt.plot(generations, errors2, '^', label='Trial 2')
+plt.title('Error Over Time', {'fontsize': 40})
+
+legend = plt.legend(loc='upper right', shadow=False)
+
 plt.xlabel('Generation')
 plt.ylabel('Error')
 plt.show()

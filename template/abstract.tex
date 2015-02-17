@@ -1,10 +1,12 @@
-
 % Place the contents of your abstract between the
 % \begin{abstract} and \end{abstract} decorators.
 
 \begin{abstract}
 
-Often described as “the second-best way to solve any problem,” Genetic Programming (GP) relies on Darwinian principles of natural selection to produce models of a system. In this experiment, we applied GP to the problem of Symbolic Regression – that is, we attempted to find the function used to generate given datasets. To accomplish this, we randomly generated a population of symbol trees, each representing a different equation. We then evaluated the “fitness” of each tree and selected the fittest individuals to generate the next generation of trees. In doing this, we saw our algorithm produce a function that approximated data from Generator 1 to within 5x10-15. The resulting equation was 10/(x2 – 6x + 14), leading us to believe that this was, in fact, the equation used in Generator 1. This is noted later too, but as of the writing of this, our run of the three variable data hasn’t finished running. From these results we have demonstrated that GP is a viable method of performing Symbolic Regression.\\
+Often described as "the second-best way to solve any problem", Genetic Programming (GP) relies on Darwinian principles of natural selection to produce models of a system. In this experiment, we applied GP to the problem of Symbolic Regression - that is, we attempted to find the function used to generate given datasets. To accomplish this, we randomly generated a population of symbol trees, each representing a different equation. We then evaluated the "fitness" of each tree and selected the fittest individuals to generate the next generation of trees. In doing so, we saw our algorithm produce a function that approximated data from Generator 1 with an absolute error of 5x$10^{-15}$. The resulting equation was 10/($x^2$ - 6x + 14), leading us to believe that this was, in fact, the equation used in Generator 1. Our algorithm was unable to accurately estimate a function for the dataset with three variables. Our best estimation for the function with three variables was: with an absolute error over 400 million.
+
+
+This is noted later too, but as of the writing of this, our run of the three variable data hasn't finished running. From these results we have demonstrated that GP is a viable method of performing Symbolic Regression.\\
 
 % The \textbf{} command makes the specified text bold. The \emph{} or
 % \textit{} command are used to italicize text. In general, text is never
@@ -12,4 +14,3 @@ Often described as “the second-best way to solve any problem,” Genetic Progr
 
 % DON'T FORGET TO MATCH EACH OPEN BRACE WITH A CLOSING BRACE!
 \end{abstract}
-
